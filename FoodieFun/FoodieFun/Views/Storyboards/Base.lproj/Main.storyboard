@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArchivoNarrow-Bold.otf">
+            <string>ArchivoNarrow-Bold</string>
+        </array>
+        <array key="ArchivoNarrow-Regular.otf">
+            <string>ArchivoNarrow-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QOH-vI-pcm">
+                                <rect key="frame" x="132" y="394" width="150" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMM-KC-qZV">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                                        <color key="backgroundColor" name="Tuscany"/>
+                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" name="Ronchi"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="CTx-1g-b94" kind="presentation" modalPresentationStyle="fullScreen" id="1B6-Ia-0yt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRs-21-vl8">
+                                        <rect key="frame" x="0.0" y="48" width="150" height="40"/>
+                                        <color key="backgroundColor" name="Tuscany"/>
+                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" name="Ronchi"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="xPq-HS-s1v" kind="presentation" modalPresentationStyle="fullScreen" id="h2K-2J-Dfc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="FoodieFun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdB-Nu-EdI">
+                                <rect key="frame" x="81" y="254" width="252" height="69"/>
+                                <fontDescription key="fontDescription" name="ArchivoNarrow-Bold" family="Archivo Narrow" pointSize="60"/>
+                                <color key="textColor" name="Ronchi"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QOH-vI-pcm" secondAttribute="trailing" constant="132" id="5ES-a2-5u6"/>
+                            <constraint firstItem="QOH-vI-pcm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="BE9-mM-e27"/>
+                            <constraint firstItem="QOH-vI-pcm" firstAttribute="top" secondItem="kdB-Nu-EdI" secondAttribute="bottom" constant="71" id="FfE-RG-Tsd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kdB-Nu-EdI" secondAttribute="trailing" constant="81" id="OCy-r9-6fA"/>
+                            <constraint firstItem="kdB-Nu-EdI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="210" id="V0g-vh-lsc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QOH-vI-pcm" secondAttribute="bottom" constant="380" id="bbV-D6-SKu"/>
+                            <constraint firstItem="kdB-Nu-EdI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="81" id="e60-Ea-40G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320.28985507246381" y="243.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="niG-nf-n8T">
+            <objects>
+                <viewController id="CTx-1g-b94" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3td-4w-dW2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="U3v-mP-l3e">
+                                <rect key="frame" x="20" y="64" width="374" height="139"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="QnL-uj-zqw">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-7e-QqR">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
+                                                <color key="textColor" name="Ronchi"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bxk-kD-eId">
+                                                <rect key="frame" x="0.0" y="22" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't fill in your username." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="327-90-lu4">
+                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
+                                                <color key="textColor" name="Cararra"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aRk-aj-72W">
+                                        <rect key="frame" x="0.0" y="83" width="374" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URS-AY-aYV">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
+                                                <color key="textColor" name="Ronchi"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e17-iv-phx">
+                                                <rect key="frame" x="0.0" y="22" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't create a username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQK-dv-x1a">
+                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
+                                                <color key="textColor" name="Cararra"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vH5-CQ-3Ox">
+                                <rect key="frame" x="132" y="822" width="150" height="40"/>
+                                <color key="backgroundColor" name="Tuscany"/>
+                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" name="Ronchi"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="eLc-6E-qXp" kind="presentation" modalPresentationStyle="fullScreen" id="OOh-UI-Qxc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <constraints>
+                            <constraint firstItem="U3v-mP-l3e" firstAttribute="leading" secondItem="oR2-bx-1GU" secondAttribute="leading" constant="20" id="EiZ-R3-bZf"/>
+                            <constraint firstItem="vH5-CQ-3Ox" firstAttribute="leading" secondItem="oR2-bx-1GU" secondAttribute="leading" constant="132" id="eAa-C9-2gU"/>
+                            <constraint firstItem="oR2-bx-1GU" firstAttribute="trailing" secondItem="vH5-CQ-3Ox" secondAttribute="trailing" constant="132" id="ekK-kG-Dsp"/>
+                            <constraint firstItem="U3v-mP-l3e" firstAttribute="top" secondItem="oR2-bx-1GU" secondAttribute="top" constant="20" id="hjM-gN-V6n"/>
+                            <constraint firstItem="oR2-bx-1GU" firstAttribute="trailing" secondItem="U3v-mP-l3e" secondAttribute="trailing" constant="20" id="nwB-Ba-raJ"/>
+                            <constraint firstItem="oR2-bx-1GU" firstAttribute="bottom" secondItem="vH5-CQ-3Ox" secondAttribute="bottom" id="r0F-Jp-1N9"/>
+                            <constraint firstItem="vH5-CQ-3Ox" firstAttribute="top" relation="greaterThanOrEqual" secondItem="U3v-mP-l3e" secondAttribute="bottom" constant="8" id="rHQ-Ve-ZZw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oR2-bx-1GU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XY1-5r-kCe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tC-nN-J0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="-48"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XD2-US-taf">
+            <objects>
+                <viewController id="xPq-HS-s1v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pev-ku-ukn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="dWZ-tJ-iBc">
+                                <rect key="frame" x="20" y="52" width="374" height="388"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-2U-4gD">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2v-vV-24x">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
+                                                <color key="textColor" name="Ronchi"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZM-AZ-Ivf">
+                                                <rect key="frame" x="0.0" y="22" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't fill in your username." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycZ-W9-0iZ">
+                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
+                                                <color key="textColor" name="Cararra"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-qJ-cE7">
+                                        <rect key="frame" x="0.0" y="83" width="374" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0R-fg-M4K">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
+                                                <color key="textColor" name="Ronchi"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M10-lK-7fF">
+                                                <rect key="frame" x="0.0" y="22" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't create a username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j31-c2-MFs">
+                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
+                                                <color key="textColor" name="Cararra"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-zQ-smw">
+                                        <rect key="frame" x="0.0" y="166" width="374" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkm-aY-3sz">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
+                                                <color key="textColor" name="Ronchi"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QC0-cd-zks">
+                                                <rect key="frame" x="0.0" y="22" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't create a password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHY-43-0U9">
+                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
+                                                <color key="textColor" name="Cararra"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eqD-BS-69Z">
+                                        <rect key="frame" x="0.0" y="249" width="374" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSZ-yh-Hff">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
+                                                <color key="textColor" name="Ronchi"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-iX-5nS">
+                                                <rect key="frame" x="0.0" y="22" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, the password doesn't match" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-0I-3lh">
+                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
+                                                <color key="textColor" name="Cararra"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-4y-7Ge">
+                                        <rect key="frame" x="0.0" y="332" width="374" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-7r-MZ5">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
+                                                <color key="textColor" name="Ronchi"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1e4-ng-oNc">
+                                                <rect key="frame" x="0.0" y="22" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't add a location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hZ-4k-sue">
+                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
+                                                <color key="textColor" name="Cararra"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="Tr5-Ze-5T8">
+                                <rect key="frame" x="20" y="822" width="374" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E95-5l-Qfr">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                                        <color key="backgroundColor" name="Tuscany"/>
+                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" name="Ronchi"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXR-1w-QT9">
+                                        <rect key="frame" x="224" y="0.0" width="150" height="40"/>
+                                        <color key="backgroundColor" name="Tuscany"/>
+                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" name="Ronchi"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="eLc-6E-qXp" kind="presentation" modalPresentationStyle="fullScreen" id="Fw5-x0-4dt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <constraints>
+                            <constraint firstItem="Tr5-Ze-5T8" firstAttribute="leading" secondItem="Tpj-a2-TbE" secondAttribute="leading" constant="20" id="BKN-Je-mPf"/>
+                            <constraint firstItem="Tr5-Ze-5T8" firstAttribute="bottom" secondItem="Tpj-a2-TbE" secondAttribute="bottom" id="FeI-k5-cZd"/>
+                            <constraint firstItem="dWZ-tJ-iBc" firstAttribute="top" secondItem="Tpj-a2-TbE" secondAttribute="top" constant="8" id="IMO-jO-7HB"/>
+                            <constraint firstItem="Tpj-a2-TbE" firstAttribute="trailing" secondItem="Tr5-Ze-5T8" secondAttribute="trailing" constant="20" id="LM1-hd-Agz"/>
+                            <constraint firstItem="dWZ-tJ-iBc" firstAttribute="leading" secondItem="Tpj-a2-TbE" secondAttribute="leading" constant="20" id="Uk2-ji-DM2"/>
+                            <constraint firstItem="Tr5-Ze-5T8" firstAttribute="top" secondItem="dWZ-tJ-iBc" secondAttribute="bottom" constant="382" id="mNh-Vl-YhB"/>
+                            <constraint firstItem="Tpj-a2-TbE" firstAttribute="trailing" secondItem="dWZ-tJ-iBc" secondAttribute="trailing" constant="20" id="nBx-gA-gD6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tpj-a2-TbE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4L-xT-1wb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="605"/>
+        </scene>
+        <!--Tabbar-->
+        <scene sceneID="Clo-Ni-cOa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tabbar" id="eLc-6E-qXp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WVx-Zy-Aer"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVS-IE-AhP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1368" y="244"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Cararra">
+            <color red="0.91399997472763062" green="0.90600001811981201" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Cocoa Brown">
+            <color red="0.093999996781349182" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Ronchi">
+            <color red="0.92500001192092896" green="0.72200000286102295" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tuscany">
+            <color red="0.76899999380111694" green="0.32199999690055847" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fw5-x0-4dt"/>
+    </inferredMetricsTieBreakers>
+</document>
