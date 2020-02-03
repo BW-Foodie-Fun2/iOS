@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fbr-kN-S7i">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="tzw-D7-Dct">
+            <objects>
+                <viewController id="DfM-t6-Z7t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VcT-7v-ogG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <viewLayoutGuide key="safeArea" id="OoH-4i-9Z1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="0PL-2i-ZxE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RCU-1e-yZ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="394" y="1235"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="1Ur-GU-PxZ">
+            <objects>
+                <viewController id="fsG-4r-Pbk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vnA-HV-Eyx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <viewLayoutGuide key="safeArea" id="3j0-4w-KP9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="phU-wj-05f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGP-Bd-zka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-326" y="1235"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aCs-pc-jld">
+            <objects>
+                <tabBarController id="fbr-kN-S7i" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XmN-qm-6hH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fsG-4r-Pbk" kind="relationship" relationship="viewControllers" id="lY9-Yd-dIF"/>
+                        <segue destination="DfM-t6-Z7t" kind="relationship" relationship="viewControllers" id="d8i-yq-stC"/>
+                        <segue destination="jGF-e3-2lW" kind="relationship" relationship="viewControllers" id="j5l-o7-4V5"/>
+                        <segue destination="Qot-2f-lMB" kind="relationship" relationship="viewControllers" id="2Jp-5g-DHb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHg-MK-GN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="387"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="3vY-hf-SSx">
+            <objects>
+                <viewController id="Qot-2f-lMB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2YI-NH-zof">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <viewLayoutGuide key="safeArea" id="3aU-Hy-2XH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" catalog="system" id="A2U-09-3cU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqR-dS-vk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816" y="1233"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="alu-1c-4bm">
+            <objects>
+                <viewController id="jGF-e3-2lW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ub-Ql-6LV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <viewLayoutGuide key="safeArea" id="Q7v-x1-6j9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="vOs-kw-dy7"/>
+                    <navigationItem key="navigationItem" id="brm-CM-91i"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6do-vs-je4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094" y="1235"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="64" height="48"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <namedColor name="Cocoa Brown">
+            <color red="0.093999996781349182" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
