@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="-320.28985507246381" y="243.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="niG-nf-n8T">
             <objects>
-                <viewController id="CTx-1g-b94" sceneMemberID="viewController">
+                <viewController id="CTx-1g-b94" customClass="LoginViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3td-4w-dW2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="QnL-uj-zqw">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-7e-QqR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-7e-QqR">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
                                                 <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
                                                 <color key="textColor" name="Ronchi"/>
@@ -110,18 +110,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't fill in your username." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="327-90-lu4">
-                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
-                                                <color key="textColor" name="Cararra"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aRk-aj-72W">
                                         <rect key="frame" x="0.0" y="83" width="374" height="56"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URS-AY-aYV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URS-AY-aYV">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
                                                 <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
                                                 <color key="textColor" name="Ronchi"/>
@@ -132,12 +126,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't create a username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQK-dv-x1a">
-                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
-                                                <color key="textColor" name="Cararra"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -155,7 +143,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="eLc-6E-qXp" kind="presentation" modalPresentationStyle="fullScreen" id="OOh-UI-Qxc"/>
+                                    <action selector="loginButtonTapped:" destination="CTx-1g-b94" eventType="touchUpInside" id="WUR-5e-Whw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -172,23 +160,28 @@
                         <viewLayoutGuide key="safeArea" id="oR2-bx-1GU"/>
                     </view>
                     <navigationItem key="navigationItem" id="XY1-5r-kCe"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="e17-iv-phx" id="tL2-4j-3Ng"/>
+                        <outlet property="usernameTextField" destination="Bxk-kD-eId" id="ORC-k2-szd"/>
+                        <segue destination="eLc-6E-qXp" kind="presentation" identifier="loginShowTabbar" modalPresentationStyle="fullScreen" id="Gx4-hv-uQN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tC-nN-J0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="-48"/>
+            <point key="canvasLocation" x="451" y="-64"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="XD2-US-taf">
             <objects>
-                <viewController id="xPq-HS-s1v" sceneMemberID="viewController">
+                <viewController id="xPq-HS-s1v" customClass="SignUpViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pev-ku-ukn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="dWZ-tJ-iBc">
-                                <rect key="frame" x="20" y="52" width="374" height="388"/>
+                                <rect key="frame" x="20" y="64" width="374" height="388"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-2U-4gD">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-2U-4gD" userLabel="Email">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2v-vV-24x">
@@ -202,15 +195,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't fill in your username." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycZ-W9-0iZ">
-                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
-                                                <color key="textColor" name="Cararra"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-qJ-cE7">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PeY-qJ-cE7" userLabel="Username">
                                         <rect key="frame" x="0.0" y="83" width="374" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0R-fg-M4K">
@@ -224,15 +211,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't create a username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j31-c2-MFs">
-                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
-                                                <color key="textColor" name="Cararra"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-zQ-smw">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-zQ-smw" userLabel="Password">
                                         <rect key="frame" x="0.0" y="166" width="374" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkm-aY-3sz">
@@ -246,37 +227,27 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't create a password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHY-43-0U9">
-                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
-                                                <color key="textColor" name="Cararra"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eqD-BS-69Z">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" id="JFP-Op-hDY" userLabel="Confirm Password">
                                         <rect key="frame" x="0.0" y="249" width="374" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSZ-yh-Hff">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdG-WJ-wIO">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
                                                 <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="18"/>
                                                 <color key="textColor" name="Ronchi"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-iX-5nS">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYF-Tv-hdS">
                                                 <rect key="frame" x="0.0" y="22" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, the password doesn't match" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-0I-3lh">
-                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
-                                                <color key="textColor" name="Cararra"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
+                                        <viewLayoutGuide key="safeArea" id="tKf-rG-qmF"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-4y-7Ge">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-4y-7Ge" userLabel="Location">
                                         <rect key="frame" x="0.0" y="332" width="374" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-7r-MZ5">
@@ -290,12 +261,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, you didn't add a location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hZ-4k-sue">
-                                                <rect key="frame" x="0.0" y="56" width="374" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="12"/>
-                                                <color key="textColor" name="Cararra"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -329,7 +294,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="eLc-6E-qXp" kind="presentation" modalPresentationStyle="fullScreen" id="Fw5-x0-4dt"/>
+                                            <action selector="signUpButtonTapped:" destination="xPq-HS-s1v" eventType="touchUpInside" id="nG3-Gh-obY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -337,20 +302,28 @@
                         </subviews>
                         <color key="backgroundColor" name="Cocoa Brown"/>
                         <constraints>
+                            <constraint firstItem="dWZ-tJ-iBc" firstAttribute="leading" secondItem="Tpj-a2-TbE" secondAttribute="leading" constant="20" id="3HR-kl-gca"/>
                             <constraint firstItem="Tr5-Ze-5T8" firstAttribute="leading" secondItem="Tpj-a2-TbE" secondAttribute="leading" constant="20" id="BKN-Je-mPf"/>
                             <constraint firstItem="Tr5-Ze-5T8" firstAttribute="bottom" secondItem="Tpj-a2-TbE" secondAttribute="bottom" id="FeI-k5-cZd"/>
-                            <constraint firstItem="dWZ-tJ-iBc" firstAttribute="top" secondItem="Tpj-a2-TbE" secondAttribute="top" constant="8" id="IMO-jO-7HB"/>
+                            <constraint firstItem="Tr5-Ze-5T8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dWZ-tJ-iBc" secondAttribute="bottom" constant="8" id="Fpi-kg-wb2"/>
                             <constraint firstItem="Tpj-a2-TbE" firstAttribute="trailing" secondItem="Tr5-Ze-5T8" secondAttribute="trailing" constant="20" id="LM1-hd-Agz"/>
-                            <constraint firstItem="dWZ-tJ-iBc" firstAttribute="leading" secondItem="Tpj-a2-TbE" secondAttribute="leading" constant="20" id="Uk2-ji-DM2"/>
-                            <constraint firstItem="Tr5-Ze-5T8" firstAttribute="top" secondItem="dWZ-tJ-iBc" secondAttribute="bottom" constant="382" id="mNh-Vl-YhB"/>
-                            <constraint firstItem="Tpj-a2-TbE" firstAttribute="trailing" secondItem="dWZ-tJ-iBc" secondAttribute="trailing" constant="20" id="nBx-gA-gD6"/>
+                            <constraint firstItem="Tpj-a2-TbE" firstAttribute="trailing" secondItem="dWZ-tJ-iBc" secondAttribute="trailing" constant="20" id="Yxe-K9-pNI"/>
+                            <constraint firstItem="dWZ-tJ-iBc" firstAttribute="top" secondItem="Tpj-a2-TbE" secondAttribute="top" constant="20" id="z7F-px-pEG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tpj-a2-TbE"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="lYF-Tv-hdS" id="DCi-2f-zFw"/>
+                        <outlet property="emailTextField" destination="3ZM-AZ-Ivf" id="kEO-aU-v3U"/>
+                        <outlet property="locationTextField" destination="1e4-ng-oNc" id="Wl8-4v-92R"/>
+                        <outlet property="passwordTextField" destination="QC0-cd-zks" id="dch-85-52y"/>
+                        <outlet property="usernameTextField" destination="M10-lK-7fF" id="vBz-fd-u87"/>
+                        <segue destination="eLc-6E-qXp" kind="presentation" identifier="signupShowTabbar" modalPresentationStyle="fullScreen" id="6k6-2L-V5I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4L-xT-1wb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="605"/>
+            <point key="canvasLocation" x="451" y="591"/>
         </scene>
         <!--Tabbar-->
         <scene sceneID="Clo-Ni-cOa">
@@ -360,13 +333,10 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVS-IE-AhP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368" y="244"/>
+            <point key="canvasLocation" x="1316" y="244"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Cararra">
-            <color red="0.91399997472763062" green="0.90600001811981201" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Cocoa Brown">
             <color red="0.093999996781349182" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -378,6 +348,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fw5-x0-4dt"/>
+        <segue reference="6k6-2L-V5I"/>
     </inferredMetricsTieBreakers>
 </document>
