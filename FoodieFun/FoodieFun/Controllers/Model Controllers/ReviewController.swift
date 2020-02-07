@@ -13,15 +13,15 @@ class ReviewController {
     
     var bearer: Bearer?
     
-    var baseURL = URL(string: "https://foodiefunbw.herokuapp.com/api")!
+    var baseURL = URL(string: "https://foodiefun-1ca00.firebaseio.com/")!
 
-    @discardableResult func createExperience(id: Int,
-                                            menu_item: String,
-                                             item_price: Int?,
-                                             item_rating: Int?,
-                                             restaurant_id: Int,
-                                             item_review: String?,
-                                             date_visited: String?) -> Review {
+    func createExperience(id: Int,
+                          menu_item: String,
+                        item_price: Int?,
+                        item_rating: Int?,
+                        restaurant_id: Int,
+                         item_review: String?,
+                        date_visited: String?) -> Review {
         let review = Review(id: id,
             menu_item: menu_item,
                             item_price: item_price ?? 0,
@@ -30,9 +30,36 @@ class ReviewController {
                             item_review: item_review ?? "",
                             date_visited: date_visited ?? "",
                             context: CoreDataStack.shared.mainContext)
-        post(review: review)
         CoreDataStack.shared.save()
         return review
+    }
+    
+    func sendTaskToServer(review: Review, completion: @escaping (Error?) -> Void = { _ in }) {
+        let requestURL = baseURL.appendingPathExtension("json")
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = "PUT"
+        
+        do {
+            try CoreDataStack.shared.save()
+//            request.httpBody = try JSONEncoder().encode([ReviewRepresentation].self)
+        } catch {
+            print("Error encoding review \(review): \(error)")
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                print("Error putting review to server: \(error)")
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                completion(nil)
+            }
+        }.resume()
     }
 
     func delete(review: Review) {
@@ -40,13 +67,13 @@ class ReviewController {
         CoreDataStack.shared.save()
     }
 
-    func fetchExperiencesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
+    func fetchReviewsFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
         guard let token = bearer?.token else {
             print("there is no bearer for fetchingMeals")
             return
         }
         
-        let reviewURL = baseURL.appendingPathComponent("reviews")
+        let reviewURL = baseURL.appendingPathExtension("json")
         
         var request = URLRequest(url: reviewURL)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -98,7 +125,6 @@ class ReviewController {
         review.item_review = item_review
         review.date_visited = date_visited
         
-        post(review: review)
         CoreDataStack.shared.save()
     }
 

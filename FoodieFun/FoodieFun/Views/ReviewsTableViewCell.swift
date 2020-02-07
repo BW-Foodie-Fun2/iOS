@@ -12,6 +12,8 @@ class ReviewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var menuName: UILabel!
     @IBOutlet weak var dateVisitedLabel: UILabel!
+    @IBOutlet weak var restaurantName: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     
     var review: Review? {
         didSet {
@@ -22,6 +24,9 @@ class ReviewsTableViewCell: UITableViewCell {
     func updateViews() {
         menuName.text = review?.menu_item
         dateVisitedLabel.text = review?.date_visited
+        if let rating = review?.item_rating {
+            ratingLabel.text = "Rating: \(rating)"
+        }
     }
     
 }

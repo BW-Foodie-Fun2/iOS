@@ -16,11 +16,16 @@ class ReviewsTableViewController: UITableViewController {
     
     lazy var fetchedResultsController: NSFetchedResultsController<Review> = {
         let fetchRequest: NSFetchRequest<Review> = Review.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "restaurant_id", ascending: true)]
-        let context = CoreDataStack.shared.mainContext
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "restaurant_id", cacheName: nil)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "menu_item", ascending: true)]
+
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "menu_item", cacheName: nil)
         frc.delegate = self
-        try! frc.performFetch()
+
+        do {
+            try frc.performFetch()
+        } catch {
+            fatalError("Error performing fetch for frc: \(error)")
+        }
         return frc
     }()
 
@@ -37,16 +42,16 @@ class ReviewsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return fetchedResultsController.sections?.count ?? 1
+        return fetchedResultsController.sections?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "theCell", for: indexPath) as? ReviewsTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "theCell", for: indexPath) as? ReviewsTableViewCell else { return UITableViewCell()}
         cell.review = fetchedResultsController.object(at: indexPath)
         return cell
     }
@@ -54,7 +59,8 @@ class ReviewsTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let experience = fetchedResultsController.object(at: indexPath)
+            let review = fetchedResultsController.object(at: indexPath)
+            reviewController.delete(review: review)
         }
     }
     

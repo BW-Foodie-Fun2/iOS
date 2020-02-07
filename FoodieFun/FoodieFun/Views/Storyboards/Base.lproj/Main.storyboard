@@ -24,6 +24,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jordane-mathieu-uPWFl7qbKgM-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="Z6V-k0-GPy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QOH-vI-pcm">
                                 <rect key="frame" x="132" y="394" width="150" height="88"/>
                                 <subviews>
@@ -74,9 +77,13 @@
                             <constraint firstItem="QOH-vI-pcm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="BE9-mM-e27"/>
                             <constraint firstItem="QOH-vI-pcm" firstAttribute="top" secondItem="kdB-Nu-EdI" secondAttribute="bottom" constant="71" id="FfE-RG-Tsd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kdB-Nu-EdI" secondAttribute="trailing" constant="81" id="OCy-r9-6fA"/>
+                            <constraint firstItem="Z6V-k0-GPy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Rnk-Pq-r3W"/>
                             <constraint firstItem="kdB-Nu-EdI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="210" id="V0g-vh-lsc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QOH-vI-pcm" secondAttribute="bottom" constant="380" id="bbV-D6-SKu"/>
+                            <constraint firstItem="Z6V-k0-GPy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="cyS-yj-W7q"/>
                             <constraint firstItem="kdB-Nu-EdI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="81" id="e60-Ea-40G"/>
+                            <constraint firstItem="Z6V-k0-GPy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gx9-zU-g2I"/>
+                            <constraint firstItem="Z6V-k0-GPy" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="wPg-52-ixT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -337,6 +344,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="jordane-mathieu-uPWFl7qbKgM-unsplash" width="3456" height="5184"/>
         <namedColor name="Cocoa Brown">
             <color red="0.093999996781349182" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -25,6 +25,7 @@
 		1AF3EA3923EDB70C00F686F8 /* AddDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3EA3823EDB70C00F686F8 /* AddDishViewController.swift */; };
 		1AF3EA3B23EDB7ED00F686F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3EA3A23EDB7ED00F686F8 /* HomeViewController.swift */; };
 		1AF3EA3E23EDBA3E00F686F8 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3EA3D23EDBA3E00F686F8 /* ReviewsTableViewCell.swift */; };
+		1AF3EA4723EDFBFA00F686F8 /* Restuarant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3EA4623EDFBF900F686F8 /* Restuarant+Convenience.swift */; };
 		1AF5719423E93C8500F9EC8F /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5719323E93C8500F9EC8F /* Auth.swift */; };
 		1AF5719723E93F8D00F9EC8F /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5719623E93F8D00F9EC8F /* Bearer.swift */; };
 		1AF5719923E944E100F9EC8F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5719823E944E100F9EC8F /* User.swift */; };
@@ -56,6 +57,8 @@
 		1AF3EA3A23EDB7ED00F686F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1AF3EA3C23EDB98200F686F8 /* FoodieFun 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FoodieFun 2.xcdatamodel"; sourceTree = "<group>"; };
 		1AF3EA3D23EDBA3E00F686F8 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		1AF3EA4323EDE9FB00F686F8 /* FoodieFun 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FoodieFun 3.xcdatamodel"; sourceTree = "<group>"; };
+		1AF3EA4623EDFBF900F686F8 /* Restuarant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restuarant+Convenience.swift"; sourceTree = "<group>"; };
 		1AF5719323E93C8500F9EC8F /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		1AF5719623E93F8D00F9EC8F /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		1AF5719823E944E100F9EC8F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -95,12 +98,11 @@
 		1A2C122A23E7835B0092501E /* FoodieFun */ = {
 			isa = PBXGroup;
 			children = (
+				1A2C124023E7836E0092501E /* Views */,
 				1AF5718A23E936CC00F9EC8F /* Controllers */,
 				1AF5718723E936B600F9EC8F /* Models */,
 				1AF5718B23E936D000F9EC8F /* View Controllers */,
-				1AF5719023E93C6100F9EC8F /* Networking */,
 				1A2C123F23E783640092501E /* Resources */,
-				1A2C124023E7836E0092501E /* Views */,
 			);
 			path = FoodieFun;
 			sourceTree = "<group>";
@@ -164,22 +166,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		1AF1FF5F23EBBE6C0055EAC9 /* Tabbars */ = {
+		1AF1FF5F23EBBE6C0055EAC9 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
 				1A4CE26923ED73570079727F /* ReviewsTableViewController.swift */,
 				1AF3EA3823EDB70C00F686F8 /* AddDishViewController.swift */,
 				1AF3EA3A23EDB7ED00F686F8 /* HomeViewController.swift */,
 			);
-			path = Tabbars;
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		1AF1FF6523EBF5860055EAC9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				1AFC558223ED289200F57587 /* CoreDataStack.swift */,
 				1AFC559023ED483600F57587 /* Convenience */,
 				1AF1FF6A23EBF69C0055EAC9 /* Representations */,
-				1AFC558223ED289200F57587 /* CoreDataStack.swift */,
 				1AFC558B23ED3D1D00F57587 /* FoodieFun.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -196,6 +198,7 @@
 		1AF5718723E936B600F9EC8F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1AF5719023E93C6100F9EC8F /* Networking */,
 				1AF1FF6523EBF5860055EAC9 /* CoreData */,
 				1AF5719623E93F8D00F9EC8F /* Bearer.swift */,
 				1AF5719823E944E100F9EC8F /* User.swift */,
@@ -215,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				1AF1FF5D23EBBE200055EAC9 /* Main */,
-				1AF1FF5F23EBBE6C0055EAC9 /* Tabbars */,
+				1AF1FF5F23EBBE6C0055EAC9 /* Tabbar */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				1A4CE26323ED4CA50079727F /* Review+Convenience.swift */,
+				1AF3EA4623EDFBF900F686F8 /* Restuarant+Convenience.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
@@ -330,6 +334,7 @@
 				1A2C122C23E7835B0092501E /* AppDelegate.swift in Sources */,
 				1A4CE26423ED4CA50079727F /* Review+Convenience.swift in Sources */,
 				1AFC558323ED289200F57587 /* CoreDataStack.swift in Sources */,
+				1AF3EA4723EDFBFA00F686F8 /* Restuarant+Convenience.swift in Sources */,
 				1AFC558D23ED3D1D00F57587 /* FoodieFun.xcdatamodeld in Sources */,
 				1A2C122E23E7835B0092501E /* SceneDelegate.swift in Sources */,
 				1AF3EA3B23EDB7ED00F686F8 /* HomeViewController.swift in Sources */,
@@ -489,6 +494,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.foodiefunBW4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Foodie Fun Aaron Cleveland AP Provisioning Profile";
@@ -509,6 +515,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.foodiefunBW4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Foodie Fun Aaron Cleveland AP Provisioning Profile";
@@ -544,10 +551,11 @@
 		1AFC558B23ED3D1D00F57587 /* FoodieFun.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1AF3EA4323EDE9FB00F686F8 /* FoodieFun 3.xcdatamodel */,
 				1AF3EA3C23EDB98200F686F8 /* FoodieFun 2.xcdatamodel */,
 				1AFC558C23ED3D1D00F57587 /* FoodieFun.xcdatamodel */,
 			);
-			currentVersion = 1AF3EA3C23EDB98200F686F8 /* FoodieFun 2.xcdatamodel */;
+			currentVersion = 1AF3EA4323EDE9FB00F686F8 /* FoodieFun 3.xcdatamodel */;
 			path = FoodieFun.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

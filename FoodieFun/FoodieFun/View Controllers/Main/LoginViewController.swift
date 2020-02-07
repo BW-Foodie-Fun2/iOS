@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
             auth.signIn(with: user) { (error) in
                 if let error = error {
                     DispatchQueue.main.async {
-                        Alert.showBasic(title: "Error Signing", message: "Please check your login information!", vc: self)
+                        Alert.showBasic(title: "Error Signing In", message: "Please check your login information!", vc: self)
                     }
                     print("Error occured during signin: \(error)")
                 } else {
