@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             !email.isEmpty,
             let location = locationTextField.text,
             !location.isEmpty {
-            let user = User(username: username, password: password, email: email, location: location)
+            let user = UserRepresentation(username: username, password: password, email: email, location: location)
 
             auth.signUp(with: user) { (error) in
                 if let error = error {

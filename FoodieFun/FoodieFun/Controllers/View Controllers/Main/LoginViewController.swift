@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
             !username.isEmpty,
             let password = passwordTextField.text,
             !password.isEmpty {
-            let user = User(username: username, password: password, email: "", location: "")
+            let user = UserRepresentation(username: username, password: password, email: "", location: "")
             
             auth.signIn(with: user) { (error) in
                 if let error = error {

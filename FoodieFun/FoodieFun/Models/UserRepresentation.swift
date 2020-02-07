@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserRepresentation.swift
 //  FoodieFun
 //
 //  Created by Aaron Cleveland on 2/4/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: Codable {
+struct UserRepresentation: Codable {
     let username: String
     let password: String
     let email: String

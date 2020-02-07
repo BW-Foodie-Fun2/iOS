@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ReviewRepresentation: Codable {
+struct RestaurantRepresentation: Codable {
     var name: String
     var cuisineID: Int
     var location: String

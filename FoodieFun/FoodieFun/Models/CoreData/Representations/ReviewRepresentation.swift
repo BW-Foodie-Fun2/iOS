@@ -15,7 +15,7 @@ struct ReviewRepresentation: Codable {
     var restaurantID: Int
     var itemReview: String
     var itemImageURL: String
-    var dateVisited: String
+    var dateVisited: Date
 
     enum CodingKeys: String, CodingKey {
         case menuItem = "menu_item"
