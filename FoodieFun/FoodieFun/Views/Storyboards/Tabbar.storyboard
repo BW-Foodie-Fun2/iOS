@@ -16,7 +16,7 @@
         <!--Home-->
         <scene sceneID="1Ur-GU-PxZ">
             <objects>
-                <viewController id="fsG-4r-Pbk" sceneMemberID="viewController">
+                <viewController id="fsG-4r-Pbk" customClass="HomeViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnA-HV-Eyx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGP-Bd-zka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-568.1159420289855" y="1232.8125"/>
+            <point key="canvasLocation" x="-58" y="1233"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aCs-pc-jld">
@@ -65,7 +65,7 @@
                     <connections>
                         <segue destination="fsG-4r-Pbk" kind="relationship" relationship="viewControllers" id="lY9-Yd-dIF"/>
                         <segue destination="Qot-2f-lMB" kind="relationship" relationship="viewControllers" id="2Jp-5g-DHb"/>
-                        <segue destination="mRM-pc-Whk" kind="relationship" relationship="viewControllers" id="jit-A8-i00"/>
+                        <segue destination="mRM-pc-Whk" kind="relationship" relationship="viewControllers" id="jj7-Q5-pQd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHg-MK-GN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -75,7 +75,7 @@
         <!--Add Dish-->
         <scene sceneID="3vY-hf-SSx">
             <objects>
-                <viewController id="Qot-2f-lMB" sceneMemberID="viewController">
+                <viewController id="Qot-2f-lMB" customClass="AddDishViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2YI-NH-zof">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,6 +117,9 @@
                                 <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="restaurantPicker:" destination="Qot-2f-lMB" eventType="editingDidEnd" id="2yY-Ns-SRg"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DIsh Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-OT-OtP">
                                 <rect key="frame" x="20" y="282" width="150" height="34"/>
@@ -125,6 +128,9 @@
                                 <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dishNameTextField:" destination="Qot-2f-lMB" eventType="editingDidEnd" id="g3F-Ms-Z3V"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cuisine" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgg-En-zts">
                                 <rect key="frame" x="219" y="182" width="175" height="34"/>
@@ -133,6 +139,9 @@
                                 <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="cuisinePicker:" destination="Qot-2f-lMB" eventType="editingDidEnd" id="btB-be-g1a"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EbZ-XD-4xU">
                                 <rect key="frame" x="219" y="240" width="175" height="34"/>
@@ -141,6 +150,9 @@
                                 <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="datePicker:" destination="Qot-2f-lMB" eventType="editingDidEnd" id="yc0-XI-MtM"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dish Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-Fq-tO4">
                                 <rect key="frame" x="20" y="324" width="150" height="34"/>
@@ -149,6 +161,9 @@
                                 <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dishPriceTextField:" destination="Qot-2f-lMB" eventType="editingDidEnd" id="bck-3T-ozg"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-0y-Sru">
                                 <rect key="frame" x="219" y="326" width="175" height="32"/>
@@ -183,6 +198,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Qot-2f-lMB" eventType="touchUpInside" id="hwx-v6-OWP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="Cocoa Brown"/>
@@ -194,10 +212,16 @@
                         <viewLayoutGuide key="safeArea" id="3aU-Hy-2XH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="A2U-09-3cU"/>
+                    <connections>
+                        <outlet property="dishNameLabel" destination="8Z9-2Z-jcv" id="qAO-eZ-5fz"/>
+                        <outlet property="imageView" destination="Oj9-EH-gwA" id="b9E-PG-vzE"/>
+                        <outlet property="overallRatingSegment" destination="uh0-0y-Sru" id="9HV-zy-sYs"/>
+                        <outlet property="reviewTextView" destination="Vee-pV-7o8" id="d61-Wj-D3L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqR-dS-vk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="1233"/>
+            <point key="canvasLocation" x="745" y="1233"/>
         </scene>
         <!--Add Dish-->
         <scene sceneID="nAc-l8-Ufv">
@@ -246,6 +270,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="3Ut-a4-6t9" eventType="touchUpInside" id="xAu-En-Kvp"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cuisine" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azu-BF-66d">
                                 <rect key="frame" x="219" y="118" width="175" height="34"/>
@@ -318,27 +345,56 @@
                         <viewLayoutGuide key="safeArea" id="XZ9-uU-J3t"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="PFz-Sp-uue"/>
+                    <connections>
+                        <outlet property="cuisineTextField" destination="azu-BF-66d" id="YEV-dm-pXi"/>
+                        <outlet property="ratingSegmentControl" destination="l5V-bq-Gln" id="qtC-TP-ECJ"/>
+                        <outlet property="restaurantAddress" destination="YuT-J9-Zy5" id="PUR-fX-amd"/>
+                        <outlet property="restaurantHours" destination="y3Q-nE-UP6" id="nPo-Ik-xnA"/>
+                        <outlet property="restaurantName" destination="Mtb-78-KGH" id="T7r-WA-Kpy"/>
+                        <outlet property="restaurantTextField" destination="Q3e-tB-mhv" id="Uw8-4K-VBm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORu-Fz-Jdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="227.536231884058" y="1232.8125"/>
+            <point key="canvasLocation" x="745" y="2075"/>
         </scene>
-        <!--Reviews-->
+        <!--Item-->
         <scene sceneID="urP-bP-yMD">
             <objects>
-                <tableViewController id="mRM-pc-Whk" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JUA-Jx-qZL">
+                <tableViewController id="mRM-pc-Whk" customClass="ReviewsTableViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JUA-Jx-qZL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="Cocoa Brown"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="G5c-98-TRf">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="theCell" id="G5c-98-TRf" customClass="ReviewsTableViewCell" customModule="FoodieFun" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G5c-98-TRf" id="lfV-xC-HpA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY8-z5-B85">
+                                            <rect key="frame" x="20" y="15" width="110" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUT-lO-Xlx">
+                                            <rect key="frame" x="300" y="15" width="75" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateVisitedLabel" destination="WUT-lO-Xlx" id="dqf-Fz-ZV9"/>
+                                    <outlet property="menuName" destination="AY8-z5-B85" id="bXo-P7-uUV"/>
+                                    <segue destination="3Ut-a4-6t9" kind="presentation" modalPresentationStyle="fullScreen" id="pWD-hc-RT3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -346,15 +402,15 @@
                             <outlet property="delegate" destination="mRM-pc-Whk" id="UnQ-Jh-fu7"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Reviews" image="bookmark" catalog="system" id="CFQ-5O-Oyg"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="SV7-S9-87m"/>
+                    <navigationItem key="navigationItem" id="3kh-NK-R4c"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HT8-Ep-JZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000" y="1233"/>
+            <point key="canvasLocation" x="1680" y="1233"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bookmark" catalog="system" width="56" height="64"/>
         <image name="house" catalog="system" width="64" height="54"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <namedColor name="Cararra">
@@ -373,4 +429,7 @@
             <color red="0.76899999380111694" green="0.32199999690055847" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pWD-hc-RT3"/>
+    </inferredMetricsTieBreakers>
 </document>

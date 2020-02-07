@@ -1,20 +1,21 @@
 //
-//  RestaurantDetailViewController.swift
+//  HomeViewController.swift
 //  FoodieFun
 //
-//  Created by Aaron Cleveland on 2/6/20.
+//  Created by Aaron Cleveland on 2/7/20.
 //  Copyright © 2020 Aaron Cleveland. All rights reserved.
 //
 
 import UIKit
 
-class RestaurantDetailViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }    
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import CoreData
 
 enum HTTPMethod: String {
     case get = "GET"
-    case post = "POST"
     case put = "PUT"
+    case post = "POST"
     case delete = "DELETE"
 }
 
@@ -21,7 +22,6 @@ enum NetworkError: Error {
     case otherError
     case badData
     case noDecode
-    case noEncode
 }
 
 class Auth {
@@ -30,7 +30,9 @@ class Auth {
     private let signUpURL = URL(string: "https://foodiefunbw.herokuapp.com/api/auth/register")!
     private let signInURL = URL(string: "https://foodiefunbw.herokuapp.com/api/auth/login")!
     
-    func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
+    typealias CompletionHanlder = (Error?) -> Void
+    
+    func signUp(with user: User, completion: @escaping (Error?) -> ()) {
         
         //Building URL Request
         var request = URLRequest(url: signUpURL)
@@ -64,7 +66,7 @@ class Auth {
         }.resume()
     }
     
-    func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
+    func signIn(with user: User, completion: @escaping (Error?) -> ()) {
         
         // Building URL Request
         var request = URLRequest(url: signInURL)
