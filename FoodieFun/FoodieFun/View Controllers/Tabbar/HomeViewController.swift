@@ -10,13 +10,11 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
 // Creating public var for selected restaurant
 public var selectedRestaurantTitle: String = ""
 
-class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
     
-    // Outlets
     @IBOutlet weak var selectRestaurantButton: UIButton!
     @IBOutlet weak var mapTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var navigateToRestaurantButton: UIButton!
@@ -27,11 +25,11 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     @IBOutlet weak var restaurantNameLabel: UILabel!
     
     // Custom UI
-    // var searchBar = UISearchBar()
-    
-    // var foodSearchMapView = MKMapView()
-    
-    // var restaurantNameLabel = UILabel()
+    //    var searchBar = UISearchBar()
+    //
+    //    var foodSearchMapView = MKMapView()
+    //
+    //    var restaurantNameLabel = UILabel()
     
     // Searched String
     var searchedTextString: String = ""
@@ -67,14 +65,13 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     // Search radius
     let searchRadius: CLLocationDistance = 10
     
-    var reviewController: ReviewController?
+    var reviewController: ReviewController!
     
     // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSegmentedControls()
         setupSearchBar()
-        setupButton()
         setupLabel()
         setupMap()
     }
@@ -96,38 +93,13 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "addReviewSegue" {
-//            if let addReviewVC = segue.destination as? RestaurantDetailViewController {
-//                addReviewVC.reviewController = reviewController
-//            }
-//        }
-//    }
-    
-    // Create setup button function
-    func setupButton() {
-        
-        // selectedRestaurantButton
-        selectRestaurantButton.isHidden = true
-        selectRestaurantButton.backgroundColor = .orange
-        selectRestaurantButton.tintColor = .white
-        selectRestaurantButton.layer.cornerRadius = 7
-        selectRestaurantButton.setTitle("",
-                                        for: .normal)
-        
-        // navigateToRestaurantButton
-        navigateToRestaurantButton.isHidden = true
-        navigateToRestaurantButton.tintColor = .orange
-        navigateToRestaurantButton.setTitle("",
-                                            for: .normal)
-        
-        // myLocationButton
-        myLocationButton.tintColor = .white
-        myLocationButton.backgroundColor = .orange
-        myLocationButton.layer.cornerRadius = 4
-        myLocationButton.setTitle("My Location",
-                                  for: .normal)
-    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if segue.identifier == "addRestuarantReviewSegue" {
+    //            if let addRestuarantVC = segue.destination as? RestaurantDetailViewController {
+    //                addRestuarantVC.reviewController = reviewController
+    //            }
+    //        }
+    //    }
     
     // Search in map using given string from searchBar
     func searchInMap() {
@@ -154,13 +126,13 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             }
             
             if let response = response {
-            for item in response.mapItems {
-                self.addPinToMapView(title: item.name,
-                                     latitude: item.placemark.location!.coordinate.latitude,
-                                     longitude: item.placemark.location!.coordinate.longitude)
-                self.arrayOfResutls.append(item)
-                
-                print("\(self.arrayOfResutls)")
+                for item in response.mapItems {
+                    self.addPinToMapView(title: item.name,
+                                         latitude: item.placemark.location!.coordinate.latitude,
+                                         longitude: item.placemark.location!.coordinate.longitude)
+                    self.arrayOfResutls.append(item)
+                    
+                    print("\(self.arrayOfResutls)")
                 }
             }
         })
@@ -191,12 +163,12 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         foodSearchMapView.mapType = .standard
         foodSearchMapView.delegate = self
         foodSearchMapView.showsScale = true
-//        foodSearchMapView.showsCompass = true
+        //        foodSearchMapView.showsCompass = true
         let coordinateRegion = MKCoordinateRegion.init(center: userCurrentLocation.coordinate,
                                                        latitudinalMeters: searchRadius * 5.0,
                                                        longitudinalMeters: searchRadius * 5.0)
         foodSearchMapView.setRegion(coordinateRegion,
-                          animated: true)
+                                    animated: true)
     }
     
     func createCompass() {
@@ -224,43 +196,6 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         // searchBarLayoutConstraints()
     }
     
-    
-//    func searchBarLayoutConstraints() {
-//        let safeViewMargins = self.view.safeAreaLayoutGuide
-//        view.addSubview(searchBar)
-//        searchBar.translatesAutoresizingMaskIntoConstraints = false
-//        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-//                                                     constant: 0).isActive = true
-//        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-//                                                    constant: 0).isActive = true
-//        searchBar.topAnchor.constraint(equalTo: safeViewMargins.topAnchor,
-//                                                constant: 0).isActive = true
-//    }
-    
-//    func mapViewLayoutConstraints() {
-//        let safeViewMargins = self.view.safeAreaLayoutGuide
-//        view.addSubview(foodSearchMapView)
-//        foodSearchMapView.translatesAutoresizingMaskIntoConstraints = false
-//        foodSearchMapView.trailingAnchor.constraint(equalTo: safeViewMargins.trailingAnchor,
-//                                             constant: 0).isActive = true
-//        foodSearchMapView.leadingAnchor.constraint(equalTo: safeViewMargins.leadingAnchor,
-//                                            constant: 0).isActive = true
-//        foodSearchMapView.topAnchor.constraint(equalTo: searchBar.bottomAnchor,
-//                                        constant: 0).isActive = true
-//        foodSearchMapView.heightAnchor.constraint(equalToConstant: safeViewMargins.layoutFrame.height / 2).isActive = true
-//    }
-    
-    // Layout constraints for label
-//    func labelLayoutConstraints() {
-//        let safeViewMargins = self.view.safeAreaLayoutGuide
-//        view.addSubview(restaurantNameLabel)
-//        restaurantNameLabel.translatesAutoresizingMaskIntoConstraints = false
-//        restaurantNameLabel.trailingAnchor.constraint(equalTo: safeViewMargins.trailingAnchor, constant: 0).isActive = true
-//        restaurantNameLabel.leadingAnchor.constraint(equalTo: safeViewMargins.leadingAnchor, constant: 0).isActive = true
-//        restaurantNameLabel.bottomAnchor.constraint(equalTo: safeViewMargins.bottomAnchor, constant: 0).isActive = true
-//        restaurantNameLabel.center.x = self.view.center.x
-//    }
-
     // Determine Current Location
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
@@ -290,7 +225,7 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
                                         span: MKCoordinateSpan(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta))
         // Set region on mapview
         self.foodSearchMapView.setRegion(region,
-                               animated: true)
+                                         animated: true)
         
         // Stops updating the current location
         manager.stopUpdatingLocation()
@@ -310,7 +245,7 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     // User clicks on the annotation
     func mapView(_ mapView: MKMapView,
                  didSelect view: MKAnnotationView) {
-
+        
         if let restaurantTitle = view.annotation?.title,
             let restaurantAddress = view.annotation?.coordinate
         {
@@ -335,7 +270,6 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     // Create setup function for labels
     func setupLabel() {
-        
         // restaurantNameLabel setup
         // labelLayoutConstraints()
         restaurantNameLabel.text = ""
@@ -343,13 +277,13 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         restaurantNameLabel.minimumScaleFactor = 0.2
     }
     
-
+    
     
     // Create setup for segmented controls
     func setupSegmentedControls() {
         mapTypeSegmentedControl.selectedSegmentTintColor = .orange
         categoriesSegmentedControl.selectedSegmentTintColor = .orange
-
+        
     }
     
     // Create UIAlertController for messages
@@ -361,7 +295,7 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         // Create OK button
         let OKAction = UIAlertAction(title: "OK",
                                      style: .default) { (action:UIAlertAction!) in
-            
+                                        
                                         // Code in this block will trigger when OK button tapped.
                                         print("No Results")
         }
@@ -369,26 +303,26 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         self.present(alertController,
                      animated: true,
                      completion:nil)
-
+        
     }
     
     // Function to alert user how many results were returned from search
     func messageResultsReturnedFromSearch(count: Int) {
         
-            let alertController = UIAlertController(title: "\(count) Results Found",
-                                                    message: "Your search returned \(count) results",
-                                                    preferredStyle: .alert)
-            
-            // Create OK button
-            let OKAction = UIAlertAction(title: "OK",
-                                         style: .default) { (action:UIAlertAction!) in
-                                            // Code in this block will trigger when OK button tapped.
-                                            print("No Results")
-            }
-            alertController.addAction(OKAction)
-            self.present(alertController,
-                         animated: true,
-                         completion:nil)
+        let alertController = UIAlertController(title: "\(count) Results Found",
+            message: "Your search returned \(count) results",
+            preferredStyle: .alert)
+        
+        // Create OK button
+        let OKAction = UIAlertAction(title: "OK",
+                                     style: .default) { (action:UIAlertAction!) in
+                                        // Code in this block will trigger when OK button tapped.
+                                        print("No Results")
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController,
+                     animated: true,
+                     completion:nil)
     }
     
     // Segmented control function for map type
@@ -427,13 +361,13 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         let query = "?ll=\(latitude),\(longitude)&q=\(restaurantStringForURL)"
         
         // Appending query to apple maps URL
-         let urlString = "http://maps.apple.com/".appending(query)
+        let urlString = "http://maps.apple.com/".appending(query)
         
         // Opening URL using apple maps
-         if let url = URL(string: urlString) {
-             UIApplication.shared.open(url,
-                                       options: [:],
-                                       completionHandler: nil)
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url,
+                                      options: [:],
+                                      completionHandler: nil)
         }
     }
     
@@ -445,7 +379,7 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
                                                        latitudinalMeters: searchRadius * latitudinalMeters,
                                                        longitudinalMeters: searchRadius * longitudinalMeters)
         foodSearchMapView.setRegion(coordinateRegion,
-                          animated: true)
+                                    animated: true)
         
     }
     
@@ -454,7 +388,7 @@ class HomViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         
         if searchBar.text == "" {
             if categoriesSegmentedControl.selectedSegmentIndex == 0 {
-            categories = [.restaurant]
+                categories = [.restaurant]
             } else if categoriesSegmentedControl.selectedSegmentIndex == 1  {
                 categories = [.brewery, .winery]
             } else if categoriesSegmentedControl.selectedSegmentIndex == 2 {

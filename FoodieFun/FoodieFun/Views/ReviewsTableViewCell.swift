@@ -22,11 +22,11 @@ class ReviewsTableViewCell: UITableViewCell {
     }
     
     func updateViews() {
-        menuName.text = review?.menu_item
-        dateVisitedLabel.text = review?.date_visited
-        if let rating = review?.item_rating {
+        
+        menuName.text = review?.menuItem
+        dateVisitedLabel.text = review?.dateVisited
+        if let rating = review?.itemRating {
             ratingLabel.text = "Rating: \(rating)"
         }
     }
-    
 }

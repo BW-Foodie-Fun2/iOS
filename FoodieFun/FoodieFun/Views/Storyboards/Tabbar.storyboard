@@ -16,111 +16,121 @@
         <!--Home-->
         <scene sceneID="1Ur-GU-PxZ">
             <objects>
-                <viewController id="fsG-4r-Pbk" customClass="HomViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fsG-4r-Pbk" customClass="HomeViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnA-HV-Eyx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivm-A4-lRq">
-                                <rect key="frame" x="244" y="756" width="150" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tuscany"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
-                                <state key="normal" title="Check In">
-                                    <color key="titleColor" name="Ronchi"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-zh-pZ2">
-                                <rect key="frame" x="0.0" y="147" width="414" height="553"/>
-                            </mapView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L76-xv-Agv">
-                                <rect key="frame" x="0.0" y="91" width="414" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW2-D2-uzv">
-                                <rect key="frame" x="20" y="708" width="374" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tuscany"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
-                                <color key="textColor" name="Ronchi"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="js6-Rf-DdY">
-                                <rect key="frame" x="20" y="44" width="374" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tuscany"/>
-                                <segments>
-                                    <segment title="Restaurant"/>
-                                    <segment title="Bar / Drink"/>
-                                    <segment title="Cafe"/>
-                                    <segment title="Bakery"/>
-                                </segments>
-                                <connections>
-                                    <action selector="categoriesSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="f7p-GY-FAI"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Pp-gg-518">
-                                <rect key="frame" x="137" y="147" width="140" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Standard"/>
-                                    <segment title="Satallite"/>
-                                </segments>
-                                <connections>
-                                    <action selector="mapTypeSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="0bR-EE-YWt"/>
-                                </connections>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI2-Ti-rOm">
-                                <rect key="frame" x="20" y="756" width="150" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tuscany"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
-                                <state key="normal" title="Navigate">
-                                    <color key="titleColor" name="Ronchi"/>
-                                </state>
-                                <connections>
-                                    <action selector="navigateToRestaurantButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="plH-cM-N5h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-4I-rac">
-                                <rect key="frame" x="344" y="650" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="location.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="myLocationButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="lo6-eS-o8V"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7f7-H4-0dh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L76-xv-Agv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-zh-pZ2">
+                                        <rect key="frame" x="0.0" y="56" width="414" height="564"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="564" id="TQU-hf-ZXl"/>
+                                        </constraints>
+                                    </mapView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Pp-gg-518">
+                                        <rect key="frame" x="0.0" y="620" width="414" height="32"/>
+                                        <segments>
+                                            <segment title="Standard"/>
+                                            <segment title="Satallite"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" name="Ronchi"/>
+                                        <connections>
+                                            <action selector="mapTypeSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="aU2-ip-W3k"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="js6-Rf-DdY">
+                                        <rect key="frame" x="0.0" y="651" width="414" height="51"/>
+                                        <segments>
+                                            <segment title="Restaurant"/>
+                                            <segment title="Bar / Drink"/>
+                                            <segment title="Cafe"/>
+                                            <segment title="Bakery"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" name="Ronchi"/>
+                                        <connections>
+                                            <action selector="categoriesSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="CHZ-26-RGx"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW2-D2-uzv">
+                                        <rect key="frame" x="0.0" y="701" width="414" height="28"/>
+                                        <color key="backgroundColor" name="Cocoa Brown"/>
+                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                        <color key="textColor" name="Ronchi"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eQR-Fk-nRw">
+                                        <rect key="frame" x="0.0" y="729" width="414" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI2-Ti-rOm">
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="40"/>
+                                                <color key="backgroundColor" name="Cocoa Brown"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                                <state key="normal" title="Navigate">
+                                                    <color key="titleColor" name="Ronchi"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="navigateToRestaurantButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="Kwz-qc-fJk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-4I-rac">
+                                                <rect key="frame" x="138" y="0.0" width="138" height="40"/>
+                                                <state key="normal" image="location.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="myLocationButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="els-TS-kuo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivm-A4-lRq">
+                                                <rect key="frame" x="276" y="0.0" width="138" height="40"/>
+                                                <color key="backgroundColor" name="Cocoa Brown"/>
+                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                                <state key="normal" title="Check In">
+                                                    <color key="titleColor" name="Ronchi"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="aLR-Os-dZY" kind="presentation" modalPresentationStyle="fullScreen" id="nAJ-r5-vJK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <color key="backgroundColor" name="Cararra"/>
                         <constraints>
-                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" id="6Xr-j0-4Xb"/>
-                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="trailing" secondItem="3j0-4w-KP9" secondAttribute="trailing" id="8Y8-Nk-fcK"/>
-                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="bottom" secondItem="3j0-4w-KP9" secondAttribute="bottom" id="shl-aa-egL"/>
+                            <constraint firstItem="3j0-4w-KP9" firstAttribute="trailing" secondItem="7f7-H4-0dh" secondAttribute="trailing" id="07e-CN-MU5"/>
+                            <constraint firstItem="3j0-4w-KP9" firstAttribute="bottom" secondItem="7f7-H4-0dh" secondAttribute="bottom" id="8bh-p3-1dr"/>
+                            <constraint firstItem="7f7-H4-0dh" firstAttribute="top" secondItem="3j0-4w-KP9" secondAttribute="top" id="Ojl-hi-ac6"/>
+                            <constraint firstItem="7f7-H4-0dh" firstAttribute="leading" secondItem="vnA-HV-Eyx" secondAttribute="leading" id="kRI-hZ-KlP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3j0-4w-KP9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="phU-wj-05f"/>
                     <connections>
-                        <outlet property="categoriesSegmentedControl" destination="js6-Rf-DdY" id="7zi-Zl-DD5"/>
-                        <outlet property="foodSearchMapView" destination="fyi-zh-pZ2" id="kBY-ea-VF6"/>
-                        <outlet property="mapTypeSegmentedControl" destination="4Pp-gg-518" id="8oW-Bn-S7h"/>
-                        <outlet property="myLocationButton" destination="woQ-4I-rac" id="xpF-xZ-Om6"/>
-                        <outlet property="navigateToRestaurantButton" destination="vI2-Ti-rOm" id="MDK-o7-Vwr"/>
-                        <outlet property="restaurantNameLabel" destination="zW2-D2-uzv" id="NrB-Yd-eH7"/>
-                        <outlet property="searchBar" destination="L76-xv-Agv" id="E3q-xw-1nF"/>
-                        <outlet property="selectRestaurantButton" destination="Ivm-A4-lRq" id="pD6-RR-Eap"/>
-                        <segue destination="3Ut-a4-6t9" kind="presentation" identifier="addReviewSegue" modalPresentationStyle="fullScreen" id="9nF-la-uWd"/>
+                        <outlet property="categoriesSegmentedControl" destination="js6-Rf-DdY" id="DEJ-cW-L7G"/>
+                        <outlet property="foodSearchMapView" destination="fyi-zh-pZ2" id="raQ-gA-zOs"/>
+                        <outlet property="mapTypeSegmentedControl" destination="4Pp-gg-518" id="shn-tj-2Hb"/>
+                        <outlet property="myLocationButton" destination="woQ-4I-rac" id="kSr-b8-bUR"/>
+                        <outlet property="navigateToRestaurantButton" destination="vI2-Ti-rOm" id="xJL-Yv-hFC"/>
+                        <outlet property="restaurantNameLabel" destination="zW2-D2-uzv" id="cH6-Eg-t99"/>
+                        <outlet property="searchBar" destination="L76-xv-Agv" id="mmT-6E-fpw"/>
+                        <outlet property="selectRestaurantButton" destination="Ivm-A4-lRq" id="lKy-KB-cdS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGP-Bd-zka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-59.420289855072468" y="1232.8125"/>
+            <point key="canvasLocation" x="-186.95652173913044" y="1232.8125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aCs-pc-jld">
@@ -134,8 +144,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="fsG-4r-Pbk" kind="relationship" relationship="viewControllers" id="lY9-Yd-dIF"/>
-                        <segue destination="Qot-2f-lMB" kind="relationship" relationship="viewControllers" id="2Jp-5g-DHb"/>
-                        <segue destination="mRM-pc-Whk" kind="relationship" relationship="viewControllers" id="jj7-Q5-pQd"/>
+                        <segue destination="mRM-pc-Whk" kind="relationship" relationship="viewControllers" id="Dfq-Yo-qgj"/>
+                        <segue destination="Qot-2f-lMB" kind="relationship" relationship="viewControllers" id="Smn-tp-fOM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHg-MK-GN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,7 +155,7 @@
         <!--Add Dish-->
         <scene sceneID="3vY-hf-SSx">
             <objects>
-                <viewController id="Qot-2f-lMB" customClass="AddDishViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qot-2f-lMB" customClass="AddExperienceViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2YI-NH-zof">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +170,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="Tuscany"/>
+                                <color key="backgroundColor" name="Cocoa Brown"/>
                                 <constraints>
                                     <constraint firstItem="8Z9-2Z-jcv" firstAttribute="top" secondItem="kDZ-dH-WeG" secondAttribute="top" constant="52" id="VVd-ol-c01"/>
                                     <constraint firstAttribute="trailing" secondItem="8Z9-2Z-jcv" secondAttribute="trailing" constant="8" id="XhC-k8-Of0"/>
@@ -168,40 +178,8 @@
                                     <constraint firstItem="8Z9-2Z-jcv" firstAttribute="leading" secondItem="kDZ-dH-WeG" secondAttribute="leading" constant="8" id="z4x-Fq-Gs4"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Review" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-pV-7o8">
-                                <rect key="frame" x="20" y="374" width="374" height="354"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHS-c0-IXL">
-                                <rect key="frame" x="20" y="124" width="150" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DIsh Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-OT-OtP">
-                                <rect key="frame" x="244" y="124" width="150" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cuisine" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgg-En-zts">
-                                <rect key="frame" x="20" y="182" width="150" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EbZ-XD-4xU">
-                                <rect key="frame" x="132" y="238" width="150" height="34"/>
+                                <rect key="frame" x="132" y="494" width="150" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Cararra"/>
                                 <color key="textColor" name="Jaffa"/>
@@ -209,7 +187,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dish Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-Fq-tO4">
-                                <rect key="frame" x="244" y="182" width="150" height="34"/>
+                                <rect key="frame" x="126" y="219" width="150" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Cararra"/>
                                 <color key="textColor" name="Jaffa"/>
@@ -219,7 +197,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHV-jN-LRr">
                                 <rect key="frame" x="132" y="747" width="150" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tuscany"/>
+                                <color key="backgroundColor" name="Cocoa Brown"/>
                                 <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" name="Ronchi"/>
@@ -230,27 +208,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="shareExperienceTapped:" destination="Qot-2f-lMB" eventType="touchUpInside" id="9NH-mE-wuU"/>
-                                    <segue destination="mRM-pc-Whk" kind="presentation" modalPresentationStyle="fullScreen" id="txH-zH-usz"/>
+                                    <action selector="shareExperienceTapped:" destination="Qot-2f-lMB" eventType="touchUpInside" id="FDr-d9-Lgf"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rating" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHI-0t-6Qx">
-                                <rect key="frame" x="132" y="321" width="150" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rating: 1 - 5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHI-0t-6Qx">
+                                <rect key="frame" x="126" y="261" width="150" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Cararra"/>
                                 <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overall Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGz-YU-Pt1">
-                                <rect key="frame" x="132" y="294" width="150" height="19"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DIsh Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-OT-OtP">
+                                <rect key="frame" x="126" y="177" width="150" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="16"/>
-                                <color key="textColor" name="Tuscany"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Jaffa"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Review" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-pV-7o8">
+                                <rect key="frame" x="20" y="303" width="374" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Spaghetti"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <color key="backgroundColor" name="Cararra"/>
                         <constraints>
                             <constraint firstItem="kDZ-dH-WeG" firstAttribute="top" secondItem="2YI-NH-zof" secondAttribute="top" id="5u5-94-mgF"/>
                             <constraint firstItem="kDZ-dH-WeG" firstAttribute="leading" secondItem="3aU-Hy-2XH" secondAttribute="leading" id="C4F-Di-oQN"/>
@@ -260,151 +246,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="A2U-09-3cU"/>
                     <connections>
-                        <outlet property="cuisineTypeTextField" destination="xgg-En-zts" id="d89-3F-MS2"/>
-                        <outlet property="experienceLabel" destination="8Z9-2Z-jcv" id="30Z-Es-KLz"/>
-                        <outlet property="menuItemTextField" destination="gHg-OT-OtP" id="eRu-z0-z6k"/>
-                        <outlet property="priceTextField" destination="5YD-Fq-tO4" id="RWi-jv-3gw"/>
-                        <outlet property="ratingLabel" destination="OHI-0t-6Qx" id="IQU-rQ-IvG"/>
-                        <outlet property="restaurantNameTextField" destination="cHS-c0-IXL" id="cKH-WV-Q21"/>
-                        <outlet property="reviewTextView" destination="Vee-pV-7o8" id="5Ti-nK-NYT"/>
-                        <outlet property="shareExperienceButton" destination="DHV-jN-LRr" id="Seu-6u-B38"/>
+                        <outlet property="date" destination="EbZ-XD-4xU" id="yLY-9g-BhM"/>
+                        <outlet property="dishName" destination="gHg-OT-OtP" id="2rC-FY-24h"/>
+                        <outlet property="dishPrice" destination="5YD-Fq-tO4" id="eQD-Hj-MLQ"/>
+                        <outlet property="dishRating" destination="OHI-0t-6Qx" id="ACx-wf-oI5"/>
+                        <outlet property="dishReview" destination="Vee-pV-7o8" id="hBT-J3-XVb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqR-dS-vk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744.92753623188412" y="1232.8125"/>
-        </scene>
-        <!--Add Dish-->
-        <scene sceneID="nAc-l8-Ufv">
-            <objects>
-                <viewController id="3Ut-a4-6t9" customClass="RestaurantDetailViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6Ox-MZ-nNG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xve-Pi-HsC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtb-78-KGH">
-                                        <rect key="frame" x="8" y="52" width="398" height="35"/>
-                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="30"/>
-                                        <color key="textColor" name="Ronchi"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="Tuscany"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Mtb-78-KGH" secondAttribute="trailing" constant="8" id="9Dz-8r-3XX"/>
-                                    <constraint firstAttribute="bottom" secondItem="Mtb-78-KGH" secondAttribute="bottom" constant="23" id="b0x-jp-8dr"/>
-                                    <constraint firstItem="Mtb-78-KGH" firstAttribute="top" secondItem="xve-Pi-HsC" secondAttribute="top" constant="52" id="c0w-jC-FGz"/>
-                                    <constraint firstItem="Mtb-78-KGH" firstAttribute="leading" secondItem="xve-Pi-HsC" secondAttribute="leading" constant="8" id="zeF-tv-Qlb"/>
-                                </constraints>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Review" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Iw5-uZ-r85">
-                                <rect key="frame" x="20" y="411" width="374" height="375"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="158-fn-c9Y">
-                                <rect key="frame" x="132" y="812" width="150" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tuscany"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" name="Ronchi"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="3Ut-a4-6t9" eventType="touchUpInside" id="xAu-En-Kvp"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cuisine" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azu-BF-66d">
-                                <rect key="frame" x="219" y="118" width="175" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3e-tB-mhv">
-                                <rect key="frame" x="20" y="118" width="175" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-Ta-wCA">
-                                <rect key="frame" x="20" y="369" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Ronchi"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Hours:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3Q-nE-UP6">
-                                <rect key="frame" x="253" y="242" width="107" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="16"/>
-                                <color key="textColor" name="Tuscany"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l5V-bq-Gln">
-                                <rect key="frame" x="219" y="187" width="175" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Tuscany"/>
-                                <segments>
-                                    <segment title=" １"/>
-                                    <segment title="２"/>
-                                    <segment title="３"/>
-                                    <segment title="４"/>
-                                    <segment title="５"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" name="Cararra"/>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overall Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHy-VB-eCg">
-                                <rect key="frame" x="264" y="160" width="84" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="16"/>
-                                <color key="textColor" name="Tuscany"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VbB-ja-VDM">
-                                <rect key="frame" x="32" y="176" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuT-J9-Zy5">
-                                <rect key="frame" x="280" y="307" width="52" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="16"/>
-                                <color key="textColor" name="Ronchi"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" name="Cocoa Brown"/>
-                        <constraints>
-                            <constraint firstItem="xve-Pi-HsC" firstAttribute="leading" secondItem="XZ9-uU-J3t" secondAttribute="leading" id="B1o-Un-Dfu"/>
-                            <constraint firstItem="xve-Pi-HsC" firstAttribute="trailing" secondItem="XZ9-uU-J3t" secondAttribute="trailing" id="EMi-PJ-U7o"/>
-                            <constraint firstItem="xve-Pi-HsC" firstAttribute="top" secondItem="6Ox-MZ-nNG" secondAttribute="top" id="UqN-s9-mHJ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="XZ9-uU-J3t"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="PFz-Sp-uue"/>
-                    <connections>
-                        <outlet property="restaurantAddress" destination="YuT-J9-Zy5" id="PUR-fX-amd"/>
-                        <outlet property="restaurantHours" destination="y3Q-nE-UP6" id="nPo-Ik-xnA"/>
-                        <outlet property="restaurantName" destination="Mtb-78-KGH" id="T7r-WA-Kpy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ORu-Fz-Jdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="745" y="2075"/>
+            <point key="canvasLocation" x="1692.753623188406" y="1232.8125"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="urP-bP-yMD">
@@ -413,7 +264,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JUA-Jx-qZL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="Cocoa Brown"/>
+                        <color key="backgroundColor" name="Cararra"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="theCell" id="G5c-98-TRf" customClass="ReviewsTableViewCell" customModule="FoodieFun" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
@@ -457,7 +308,6 @@
                                     <outlet property="menuName" destination="AY8-z5-B85" id="bXo-P7-uUV"/>
                                     <outlet property="ratingLabel" destination="HYX-I4-dlp" id="XjQ-4f-fxa"/>
                                     <outlet property="restaurantName" destination="RMc-7x-yRX" id="0fn-kD-KYf"/>
-                                    <segue destination="3Ut-a4-6t9" kind="presentation" modalPresentationStyle="fullScreen" id="pWD-hc-RT3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -471,7 +321,137 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HT8-Ep-JZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="1233"/>
+            <point key="canvasLocation" x="745" y="1233"/>
+        </scene>
+        <!--Add Dish-->
+        <scene sceneID="fVg-A1-udg">
+            <objects>
+                <viewController id="aLR-Os-dZY" customClass="RestaurantDetailViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="obN-xR-yvs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-SI-cKM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hl-Hl-jU8">
+                                        <rect key="frame" x="8" y="52" width="398" height="35"/>
+                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="30"/>
+                                        <color key="textColor" name="Ronchi"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Cocoa Brown"/>
+                                <constraints>
+                                    <constraint firstItem="0hl-Hl-jU8" firstAttribute="leading" secondItem="dRI-SI-cKM" secondAttribute="leading" constant="8" id="7fE-zJ-OrM"/>
+                                    <constraint firstAttribute="trailing" secondItem="0hl-Hl-jU8" secondAttribute="trailing" constant="8" id="kTH-ph-hlm"/>
+                                    <constraint firstItem="0hl-Hl-jU8" firstAttribute="top" secondItem="dRI-SI-cKM" secondAttribute="top" constant="52" id="mjX-VN-Jcu"/>
+                                    <constraint firstAttribute="bottom" secondItem="0hl-Hl-jU8" secondAttribute="bottom" constant="23" id="rvO-oa-6pY"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Review" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7if-Xl-8Vz">
+                                <rect key="frame" x="20" y="374" width="374" height="354"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Spaghetti"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBc-aq-X5d">
+                                <rect key="frame" x="20" y="124" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Jaffa"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DIsh Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-Ad-P3D">
+                                <rect key="frame" x="244" y="124" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Jaffa"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cuisine" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Htv-n0-thW">
+                                <rect key="frame" x="20" y="182" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Jaffa"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPR-rJ-flS">
+                                <rect key="frame" x="132" y="238" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Jaffa"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dish Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kTh-6h-Y8i">
+                                <rect key="frame" x="244" y="182" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Jaffa"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vny-1v-iUT">
+                                <rect key="frame" x="132" y="747" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cocoa Brown"/>
+                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" name="Ronchi"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="aLR-Os-dZY" eventType="touchUpInside" id="Kyg-DA-wBn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rating" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEf-Xm-gww">
+                                <rect key="frame" x="132" y="321" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Cararra"/>
+                                <color key="textColor" name="Jaffa"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overall Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIS-gf-mgT">
+                                <rect key="frame" x="132" y="294" width="150" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="16"/>
+                                <color key="textColor" name="Spaghetti"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Cararra"/>
+                        <constraints>
+                            <constraint firstItem="dRI-SI-cKM" firstAttribute="leading" secondItem="hgP-Kn-0hE" secondAttribute="leading" id="CHv-NA-DIz"/>
+                            <constraint firstItem="dRI-SI-cKM" firstAttribute="trailing" secondItem="hgP-Kn-0hE" secondAttribute="trailing" id="dOt-d4-yOm"/>
+                            <constraint firstItem="dRI-SI-cKM" firstAttribute="top" secondItem="obN-xR-yvs" secondAttribute="top" id="etD-E4-OPS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hgP-Kn-0hE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="uAo-tg-06P"/>
+                    <connections>
+                        <outlet property="cuisineNameTextField" destination="Htv-n0-thW" id="DEu-Uw-lZh"/>
+                        <outlet property="dateTextField" destination="uPR-rJ-flS" id="Ns5-cQ-m6X"/>
+                        <outlet property="dishNameTextField" destination="7Ag-Ad-P3D" id="aOc-vC-nIc"/>
+                        <outlet property="dishPriceTextField" destination="kTh-6h-Y8i" id="40p-YN-xPs"/>
+                        <outlet property="ratingTextField" destination="DEf-Xm-gww" id="GFW-0R-bkx"/>
+                        <outlet property="restaurantNameTextField" destination="hBc-aq-X5d" id="1nD-mq-sPs"/>
+                        <outlet property="reviewTextField" destination="7if-Xl-8Vz" id="wts-BH-dPG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fep-VU-21W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="299" y="1908"/>
         </scene>
     </scenes>
     <resources>
@@ -491,12 +471,11 @@
         <namedColor name="Ronchi">
             <color red="0.92500001192092896" green="0.72200000286102295" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Spaghetti">
+            <color red="0.17599999904632568" green="0.33300000429153442" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Tuscany">
             <color red="0.76899999380111694" green="0.32199999690055847" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="txH-zH-usz"/>
-        <segue reference="9nF-la-uWd"/>
-    </inferredMetricsTieBreakers>
 </document>

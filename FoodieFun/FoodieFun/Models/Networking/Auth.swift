@@ -24,9 +24,10 @@ enum NetworkError: Error {
     case noDecode
 }
 
+var bearer: Bearer? // short on time. i know it's not good practice
+
 class Auth {
     
-    var bearer: Bearer?
     private let signUpURL = URL(string: "https://foodiefunbw.herokuapp.com/api/auth/register")!
     private let signInURL = URL(string: "https://foodiefunbw.herokuapp.com/api/auth/login")!
     
@@ -101,7 +102,7 @@ class Auth {
             
             let decoder = JSONDecoder()
             do {
-                self.bearer = try decoder.decode(Bearer.self, from: data)
+                bearer = try decoder.decode(Bearer.self, from: data)
             } catch {
                 print("Error decoding bearer object: \(error)")
                 return

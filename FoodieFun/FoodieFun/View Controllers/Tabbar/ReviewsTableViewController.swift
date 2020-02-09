@@ -16,9 +16,9 @@ class ReviewsTableViewController: UITableViewController {
     
     lazy var fetchedResultsController: NSFetchedResultsController<Review> = {
         let fetchRequest: NSFetchRequest<Review> = Review.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "menu_item", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "restaurantID", ascending: false)]
 
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "menu_item", cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
 
         do {
@@ -33,26 +33,16 @@ class ReviewsTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return fetchedResultsController.sections?.count ?? 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fetchedResultsController.sections?[section].numberOfObjects ?? 1
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "theCell", for: indexPath) as? ReviewsTableViewCell else { return UITableViewCell()}
-        cell.review = fetchedResultsController.object(at: indexPath)
+        let review = fetchedResultsController.object(at: indexPath)
+        cell.review = review
         return cell
     }
 
@@ -60,7 +50,8 @@ class ReviewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let review = fetchedResultsController.object(at: indexPath)
-            reviewController.delete(review: review)
+            CoreDataStack.shared.mainContext.delete(review)
+            reviewController.saveToPersistenceStore()
         }
     }
     
@@ -125,4 +116,3 @@ extension ReviewsTableViewController: NSFetchedResultsControllerDelegate {
     }
     
 }
-
