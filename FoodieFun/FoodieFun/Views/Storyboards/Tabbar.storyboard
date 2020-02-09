@@ -16,16 +16,17 @@
         <!--Home-->
         <scene sceneID="1Ur-GU-PxZ">
             <objects>
-                <viewController id="fsG-4r-Pbk" customClass="HomeViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fsG-4r-Pbk" customClass="HomViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnA-HV-Eyx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivm-A4-lRq">
-                                <rect key="frame" x="20" y="736" width="374" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivm-A4-lRq">
+                                <rect key="frame" x="244" y="756" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Tuscany"/>
                                 <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
-                                <state key="normal" title="Check In / Add Restaruant">
+                                <state key="normal" title="Check In">
                                     <color key="titleColor" name="Ronchi"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -33,28 +34,27 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="3Ut-a4-6t9" kind="presentation" modalPresentationStyle="fullScreen" id="16S-SJ-gMq"/>
-                                </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-zh-pZ2">
-                                <rect key="frame" x="0.0" y="100" width="414" height="361"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="361" id="2Jn-59-Qhn"/>
-                                </constraints>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-zh-pZ2">
+                                <rect key="frame" x="0.0" y="147" width="414" height="553"/>
                             </mapView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="L76-xv-Agv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L76-xv-Agv">
+                                <rect key="frame" x="0.0" y="91" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW2-D2-uzv">
-                                <rect key="frame" x="20" y="580" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="Cararra"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW2-D2-uzv">
+                                <rect key="frame" x="20" y="708" width="374" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Tuscany"/>
+                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                <color key="textColor" name="Ronchi"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="js6-Rf-DdY">
-                                <rect key="frame" x="20" y="507" width="374" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="js6-Rf-DdY">
+                                <rect key="frame" x="20" y="44" width="374" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Tuscany"/>
                                 <segments>
                                     <segment title="Restaurant"/>
                                     <segment title="Bar / Drink"/>
@@ -65,73 +65,57 @@
                                     <action selector="categoriesSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="f7p-GY-FAI"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-4I-rac">
-                                <rect key="frame" x="20" y="469" width="374" height="30"/>
-                                <state key="normal" title="My Location"/>
-                                <connections>
-                                    <action selector="myLocationButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="lo6-eS-o8V"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Pp-gg-518">
-                                <rect key="frame" x="142" y="108" width="131" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Pp-gg-518">
+                                <rect key="frame" x="137" y="147" width="140" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Standard"/>
+                                    <segment title="Satallite"/>
                                 </segments>
                                 <connections>
-                                    <action selector="mapTypeSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="7WQ-u8-PBA"/>
+                                    <action selector="mapTypeSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="0bR-EE-YWt"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI2-Ti-rOm">
-                                <rect key="frame" x="20" y="646" width="374" height="30"/>
-                                <state key="normal" title="Navigate"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI2-Ti-rOm">
+                                <rect key="frame" x="20" y="756" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Tuscany"/>
+                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                <state key="normal" title="Navigate">
+                                    <color key="titleColor" name="Ronchi"/>
+                                </state>
                                 <connections>
-                                    <action selector="navigateToRestaurantButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="yQ0-2W-wA5"/>
+                                    <action selector="navigateToRestaurantButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="plH-cM-N5h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-4I-rac">
+                                <rect key="frame" x="344" y="650" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="location.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="myLocationButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="lo6-eS-o8V"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="Cocoa Brown"/>
                         <constraints>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="trailing" secondItem="4Pp-gg-518" secondAttribute="trailing" constant="141" id="0Kk-vx-XB5"/>
-                            <constraint firstItem="vI2-Ti-rOm" firstAttribute="top" secondItem="zW2-D2-uzv" secondAttribute="bottom" constant="45" id="0fU-au-Yk3"/>
-                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="top" secondItem="L76-xv-Agv" secondAttribute="bottom" id="2Be-Wd-Fe4"/>
-                            <constraint firstItem="Ivm-A4-lRq" firstAttribute="top" secondItem="vI2-Ti-rOm" secondAttribute="bottom" constant="60" id="2HL-aH-Jo5"/>
-                            <constraint firstItem="L76-xv-Agv" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" id="6DQ-uU-LOb"/>
-                            <constraint firstItem="vI2-Ti-rOm" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" constant="20" id="72g-7V-QcI"/>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="trailing" secondItem="zW2-D2-uzv" secondAttribute="trailing" constant="20" id="7M8-bb-A3q"/>
-                            <constraint firstItem="L76-xv-Agv" firstAttribute="trailing" secondItem="3j0-4w-KP9" secondAttribute="trailing" id="Bk2-IM-3WZ"/>
-                            <constraint firstItem="woQ-4I-rac" firstAttribute="top" secondItem="fyi-zh-pZ2" secondAttribute="bottom" constant="8" id="Fb3-6B-iba"/>
-                            <constraint firstItem="js6-Rf-DdY" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" constant="20" id="G24-6p-zbe"/>
-                            <constraint firstItem="zW2-D2-uzv" firstAttribute="top" secondItem="js6-Rf-DdY" secondAttribute="bottom" constant="42" id="MGT-TM-cHb"/>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="trailing" secondItem="woQ-4I-rac" secondAttribute="trailing" constant="20" id="MfT-gZ-4hu"/>
-                            <constraint firstItem="L76-xv-Agv" firstAttribute="top" secondItem="3j0-4w-KP9" secondAttribute="top" id="NpP-2Q-KFN"/>
-                            <constraint firstItem="js6-Rf-DdY" firstAttribute="top" secondItem="woQ-4I-rac" secondAttribute="bottom" constant="8" id="OWp-bw-o34"/>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="trailing" secondItem="Ivm-A4-lRq" secondAttribute="trailing" constant="20" id="PqU-Vw-26U"/>
-                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="trailing" secondItem="3j0-4w-KP9" secondAttribute="trailing" id="QKE-2v-uJb"/>
-                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="top" secondItem="4Pp-gg-518" secondAttribute="bottom" constant="-39" id="VeS-BG-il7"/>
-                            <constraint firstItem="woQ-4I-rac" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" constant="20" id="VkA-6F-gvd"/>
-                            <constraint firstItem="zW2-D2-uzv" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" constant="20" id="WS6-0j-hOY"/>
-                            <constraint firstItem="Ivm-A4-lRq" firstAttribute="top" secondItem="vI2-Ti-rOm" secondAttribute="bottom" constant="60" id="aJ4-j9-Fw8"/>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="trailing" secondItem="js6-Rf-DdY" secondAttribute="trailing" constant="20" id="ges-D0-7TV"/>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="trailing" secondItem="vI2-Ti-rOm" secondAttribute="trailing" constant="20" id="hiJ-hI-mDg"/>
-                            <constraint firstItem="4Pp-gg-518" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" constant="142" id="iVh-5L-yxV"/>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="bottom" secondItem="Ivm-A4-lRq" secondAttribute="bottom" constant="37" id="ibD-hq-ANl"/>
-                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" id="lFa-oM-uSU"/>
-                            <constraint firstItem="Ivm-A4-lRq" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" constant="20" id="mQW-XY-1U5"/>
-                            <constraint firstItem="4Pp-gg-518" firstAttribute="top" secondItem="L76-xv-Agv" secondAttribute="bottom" constant="8" id="pu0-rS-7vT"/>
+                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" id="6Xr-j0-4Xb"/>
+                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="trailing" secondItem="3j0-4w-KP9" secondAttribute="trailing" id="8Y8-Nk-fcK"/>
+                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="bottom" secondItem="3j0-4w-KP9" secondAttribute="bottom" id="shl-aa-egL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3j0-4w-KP9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="phU-wj-05f"/>
                     <connections>
-                        <outlet property="categoriesSegmentedControl" destination="js6-Rf-DdY" id="rUo-eS-duW"/>
-                        <outlet property="foodSearchMapView" destination="fyi-zh-pZ2" id="wda-tm-6vo"/>
-                        <outlet property="mapTypeSegmentedControl" destination="4Pp-gg-518" id="aIu-Gs-xrM"/>
-                        <outlet property="myLocationButton" destination="woQ-4I-rac" id="nMT-PX-udH"/>
-                        <outlet property="navigateToRestaurantButton" destination="vI2-Ti-rOm" id="mLU-wy-fFC"/>
-                        <outlet property="restaurantNameLabel" destination="zW2-D2-uzv" id="mVg-Ec-hqf"/>
-                        <outlet property="searchBar" destination="L76-xv-Agv" id="v7B-id-7PP"/>
-                        <outlet property="selectRestaurantButton" destination="Ivm-A4-lRq" id="63X-M9-f4T"/>
+                        <outlet property="categoriesSegmentedControl" destination="js6-Rf-DdY" id="7zi-Zl-DD5"/>
+                        <outlet property="foodSearchMapView" destination="fyi-zh-pZ2" id="kBY-ea-VF6"/>
+                        <outlet property="mapTypeSegmentedControl" destination="4Pp-gg-518" id="8oW-Bn-S7h"/>
+                        <outlet property="myLocationButton" destination="woQ-4I-rac" id="xpF-xZ-Om6"/>
+                        <outlet property="navigateToRestaurantButton" destination="vI2-Ti-rOm" id="MDK-o7-Vwr"/>
+                        <outlet property="restaurantNameLabel" destination="zW2-D2-uzv" id="NrB-Yd-eH7"/>
+                        <outlet property="searchBar" destination="L76-xv-Agv" id="E3q-xw-1nF"/>
+                        <outlet property="selectRestaurantButton" destination="Ivm-A4-lRq" id="pD6-RR-Eap"/>
+                        <segue destination="3Ut-a4-6t9" kind="presentation" identifier="addReviewSegue" modalPresentationStyle="fullScreen" id="9nF-la-uWd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGP-Bd-zka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -493,6 +477,7 @@
     <resources>
         <image name="bookmark" catalog="system" width="56" height="64"/>
         <image name="house" catalog="system" width="64" height="54"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <namedColor name="Cararra">
             <color red="0.91399997472763062" green="0.90600001811981201" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -512,6 +497,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="txH-zH-usz"/>
-        <segue reference="pWD-hc-RT3"/>
+        <segue reference="9nF-la-uWd"/>
     </inferredMetricsTieBreakers>
 </document>

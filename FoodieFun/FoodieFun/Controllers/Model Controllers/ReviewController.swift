@@ -11,198 +11,82 @@ import CoreData
 
 class ReviewController {
     
+    enum HttpMethod: String {
+        case get = "GET"
+        case post = "POST"
+        case put = "PUT"
+        case delete = "DELETE"
+    }
+    
+    enum HttpHeaderType: String {
+        case contentType = "Content-Type"
+    }
+    
+    enum HttpHeaderValue: String {
+        case json = "application/json"
+    }
+    
+    struct EncodingStatus {
+        let request: URLRequest?
+        let error: Error?
+    }
+    
     var bearer: Bearer?
-    
-    var baseURL = URL(string: "https://foodiefun-1ca00.firebaseio.com/")!
+    var baseURL = URL(string: "https://foodiefunbw.herokuapp.com/")!
 
-    func createExperience(id: Int,
-                          menu_item: String,
-                        item_price: Int?,
-                        item_rating: Int?,
-                        restaurant_id: Int,
-                         item_review: String?,
-                        date_visited: String?) -> Review {
-        let review = Review(id: id,
-            menu_item: menu_item,
-                            item_price: item_price ?? 0,
-                            item_rating: item_rating ?? 0,
-                            restaurant_id: restaurant_id,
-                            item_review: item_review ?? "",
-                            date_visited: date_visited ?? "",
-                            context: CoreDataStack.shared.mainContext)
-        CoreDataStack.shared.save()
-        return review
+    static var df: DateFormatter {
+        let df = DateFormatter()
+        df.dateStyle = .short
+        df.timeStyle = .short
+        return df
+    }
+    /**
+     Create a request given a URL and requestMethod (get, post, create, etc...)
+     */
+    class func createRequest(url: URL?, method: HttpMethod, headerType: HttpHeaderType? = nil, headerValue: HttpHeaderValue? = nil) -> URLRequest? {
+        guard let requestUrl = url else {
+            NSLog("request URL is nil")
+            return nil
+        }
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = method.rawValue
+        if let headerType = headerType,
+            let headerValue = headerValue {
+            request.setValue(headerValue.rawValue, forHTTPHeaderField: headerType.rawValue)
+        }
+        return request
     }
     
-    func sendTaskToServer(review: Review, completion: @escaping (Error?) -> Void = { _ in }) {
-        let requestURL = baseURL.appendingPathExtension("json")
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = "PUT"
-        
+    class func encode(from type: Any?, request: URLRequest) -> EncodingStatus {
+        var localRequest = request
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.dateEncodingStrategy = .formatted(df)
         do {
-            try CoreDataStack.shared.save()
-//            request.httpBody = try JSONEncoder().encode([ReviewRepresentation].self)
+            switch type {
+            case is EntryRepresentation:
+                localRequest.httpBody = try jsonEncoder.encode(type as? EntryRepresentation)
+            default: fatalError("\(String(describing: type)) is not defined locally in encode function")
+            }
         } catch {
-            print("Error encoding review \(review): \(error)")
-            completion(error)
-            return
+            print("Error encoding object into JSON \(error)")
+            return EncodingStatus(request: nil, error: error)
         }
-        
-        URLSession.shared.dataTask(with: request) { (_, _, error) in
-            if let error = error {
-                print("Error putting review to server: \(error)")
-                DispatchQueue.main.async {
-                    completion(error)
-                }
-                return
-            }
-            DispatchQueue.main.async {
-                completion(nil)
-            }
-        }.resume()
+        return EncodingStatus(request: localRequest, error: nil)
     }
-
-    func delete(review: Review) {
-        CoreDataStack.shared.mainContext.delete(review)
-        CoreDataStack.shared.save()
-    }
-
-    func fetchReviewsFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
-        guard let token = bearer?.token else {
-            print("there is no bearer for fetchingMeals")
-            return
-        }
-        
-        let reviewURL = baseURL.appendingPathExtension("json")
-        
-        var request = URLRequest(url: reviewURL)
-        request.httpMethod = HTTPMethod.get.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(token, forHTTPHeaderField: "Authorization")
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(error)
-                return
-            }
-            
-            if let error = error {
-                completion(error)
-                return
-            }
-            
-            guard let data = data else {
-                completion(error)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let reviewRepresentation = try decoder.decode([ReviewRepresentation].self, from: data)
-                self.updateReviews(with: reviewRepresentation)
-            } catch {
-                NSLog("Error decoding experience objects: \(error)")
-                completion(error)
-                return
-            }
-        }.resume()
-    }
-
-    func updateReview(review: Review,
-                      id: Int?,
-                      menu_item: String,
-                      item_price: Int?,
-                      item_rating: Int?,
-                      restaurant_id: Int,
-                      item_review: String?,
-                      date_visited: String?) {
-        review.id = Int16(id ?? 0)
-        review.menu_item = menu_item
-        review.item_price = Int16(item_price ?? 0)
-        review.item_rating = Int16(item_rating ?? 0)
-        review.restaurant_id = Int16(restaurant_id)
-        review.item_review = item_review
-        review.date_visited = date_visited
-        
-        CoreDataStack.shared.save()
-    }
-
-    func updateReviews(with representations: [ReviewRepresentation]) {
-        let identifiersToFetch = representations.compactMap( {$0.id} )
-        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
-        var reviewToCreate = representationsByID
-        
-        let context = CoreDataStack.shared.mainContext
-        context.performAndWait {
-            do {
-                let fetchRequest: NSFetchRequest<Review> = Review.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "identifier IN %@", identifiersToFetch)
-                
-                let existingReviews = try context.fetch(fetchRequest)
-                
-                for review in existingReviews {
-                    let id = Int(review.id)
-                    guard let representation = representationsByID[id] else { continue }
-                    
-                    review.menu_item = representation.menu_item
-                    review.item_price = Int16(representation.item_price ?? 0)
-                    review.item_rating = Int16(representation.item_rating ?? 0)
-                    review.restaurant_id = Int16(representation.restaurant_id)
-                    review.item_review = representation.item_review
-                    review.date_visited = representation.date_visisted
-                    
-                    
-                    reviewToCreate.removeValue(forKey: id)
-                }
-                
-                for representation in reviewToCreate.values {
-                    Review(reviewRepresentation: representation, context: context)
-                }
-                
-                CoreDataStack.shared.save(context: context)
-            } catch {
-                print("Error fetching experiences from persistent store: \(error)")
-            }
-        }
-    }
-
-    func post(review: Review, completion: @escaping () -> Void = {}) {
-        guard let token = bearer?.token else {
-            completion()
-            return
-        }
-        
-        let encoder = JSONEncoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        
-        let requestURL = baseURL.appendingPathComponent("reviews")
-        var request = URLRequest(url: requestURL)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(token, forHTTPHeaderField: "Authorization")
-        request.httpMethod = HTTPMethod.post.rawValue
-        
-        guard let reviewRepresentation = review.reviewRepresentation else {
-            print("Experience representation is nil")
-            completion()
-            return
-        }
-        
+    
+    class func decode(to type: Any?, data: Data) -> [String:EntryRepresentation]? {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(df)
         do {
-            request.httpBody = try encoder.encode(reviewRepresentation)
-        } catch {
-            print("Error encoding experience representation: \(error)")
-            completion()
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { (_, _, error) in
-            if let error = error {
-                print("Error POSTing experience: \(error)")
-                completion()
-                return
+            switch type {
+            case is [String:EntryRepresentation].Type:
+                let entries = try decoder.decode([String:EntryRepresentation].self, from: data)
+                return entries
+            default: fatalError("type \(String(describing: type)) is not defined locally in decode function")
             }
-            completion()
-        }.resume()
+        } catch {
+            print("Error Decoding JSON into \(String(describing: type)) Object \(error)")
+            return nil
+        }
     }
 }

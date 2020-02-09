@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
-        <attribute name="date_visited" optional="YES" attributeType="String"/>
+    <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="createdBy" attributeType="String"/>
+        <attribute name="cuisineID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hoursOfOperation" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="item_price" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="item_rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="item_review" optional="YES" attributeType="String"/>
-        <attribute name="menu_item" optional="YES" attributeType="String"/>
-        <attribute name="restaurant_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imgURL" attributeType="String"/>
+        <attribute name="location" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="dateVisited" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemImageURL" attributeType="String"/>
+        <attribute name="itemPrice" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="itemRating" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemReview" attributeType="String"/>
+        <attribute name="menuItem" attributeType="String"/>
+        <attribute name="restaurantID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="reviewedBy" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Review" positionX="-54" positionY="27" width="128" height="28"/>
+        <element name="Restaurant" positionX="-54" positionY="72" width="128" height="178"/>
+        <element name="Review" positionX="-54" positionY="-9" width="128" height="208"/>
     </elements>
 </model>
