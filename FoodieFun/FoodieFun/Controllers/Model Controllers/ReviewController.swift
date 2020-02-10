@@ -211,10 +211,16 @@ class ReviewController {
     }
     
     func deleteReviewFromServer(review: Review, completion: @escaping CompletionHanlder = { _ in }) {
+        guard let token = bearer?.token else {
+            completion(nil)
+            return
+        }
         let requstURL = baseURL.appendingPathComponent("api")
-                                .appendingPathComponent("delete")
-                                .appendingPathComponent("id")
+                                .appendingPathComponent("reviews")
+                                .appendingPathComponent("\(review.id)")
         var request = URLRequest(url: requstURL)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
         request.httpMethod = HTTPMethod.delete.rawValue
         
         URLSession.shared.dataTask(with: request) { (_, response, error) in

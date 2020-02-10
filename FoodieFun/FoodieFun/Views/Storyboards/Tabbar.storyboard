@@ -160,24 +160,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-dH-WeG">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z9-2Z-jcv">
-                                        <rect key="frame" x="8" y="52" width="398" height="35"/>
-                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="30"/>
-                                        <color key="textColor" name="Ronchi"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="Cocoa Brown"/>
-                                <constraints>
-                                    <constraint firstItem="8Z9-2Z-jcv" firstAttribute="top" secondItem="kDZ-dH-WeG" secondAttribute="top" constant="52" id="VVd-ol-c01"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Z9-2Z-jcv" secondAttribute="trailing" constant="8" id="XhC-k8-Of0"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Z9-2Z-jcv" secondAttribute="bottom" constant="23" id="dAi-Bm-E9c"/>
-                                    <constraint firstItem="8Z9-2Z-jcv" firstAttribute="leading" secondItem="kDZ-dH-WeG" secondAttribute="leading" constant="8" id="z4x-Fq-Gs4"/>
-                                </constraints>
-                            </view>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EbZ-XD-4xU">
                                 <rect key="frame" x="132" y="494" width="150" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -237,14 +219,10 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" name="Cararra"/>
-                        <constraints>
-                            <constraint firstItem="kDZ-dH-WeG" firstAttribute="top" secondItem="2YI-NH-zof" secondAttribute="top" id="5u5-94-mgF"/>
-                            <constraint firstItem="kDZ-dH-WeG" firstAttribute="leading" secondItem="3aU-Hy-2XH" secondAttribute="leading" id="C4F-Di-oQN"/>
-                            <constraint firstItem="kDZ-dH-WeG" firstAttribute="trailing" secondItem="3aU-Hy-2XH" secondAttribute="trailing" id="ZjH-jG-1gY"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3aU-Hy-2XH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="A2U-09-3cU"/>
+                    <navigationItem key="navigationItem" id="7dR-f4-YgK"/>
                     <connections>
                         <outlet property="date" destination="EbZ-XD-4xU" id="yLY-9g-BhM"/>
                         <outlet property="dishName" destination="gHg-OT-OtP" id="2rC-FY-24h"/>
@@ -255,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqR-dS-vk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2602.898550724638" y="1232.8125"/>
+            <point key="canvasLocation" x="1841" y="1233"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="urP-bP-yMD">
@@ -276,20 +254,14 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-Wl-Udh">
                                             <rect key="frame" x="20" y="8" width="343" height="84"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-7x-yRX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUT-lO-Xlx">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                     <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUT-lO-Xlx">
-                                                    <rect key="frame" x="0.0" y="21" width="343" height="20"/>
-                                                    <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="theCell" id="FxY-tf-lC4" customClass="ReviewsTableViewCell" customModule="FoodieFun" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="42" width="343" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="28" width="343" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FxY-tf-lC4" id="5bL-u0-mAI">
                                                         <rect key="frame" x="0.0" y="0.0" width="324" height="0.0"/>
@@ -339,8 +311,8 @@
                                                         <outlet property="restaurantName" destination="saA-sG-j5P" id="sfA-iG-q7G"/>
                                                     </connections>
                                                 </tableViewCell>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY8-z5-B85">
-                                                    <rect key="frame" x="0.0" y="43" width="343" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY8-z5-B85">
+                                                    <rect key="frame" x="0.0" y="36" width="343" height="20"/>
                                                     <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -365,8 +337,7 @@
                                     <outlet property="dateVisitedLabel" destination="WUT-lO-Xlx" id="dqf-Fz-ZV9"/>
                                     <outlet property="menuName" destination="AY8-z5-B85" id="bXo-P7-uUV"/>
                                     <outlet property="ratingLabel" destination="HYX-I4-dlp" id="XjQ-4f-fxa"/>
-                                    <outlet property="restaurantName" destination="RMc-7x-yRX" id="0fn-kD-KYf"/>
-                                    <segue destination="aLR-Os-dZY" kind="show" id="NgP-8s-2lk"/>
+                                    <segue destination="Qot-2f-lMB" kind="show" id="5nf-nW-Wle"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -531,6 +502,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NgP-8s-2lk"/>
+        <segue reference="5nf-nW-Wle"/>
     </inferredMetricsTieBreakers>
 </document>

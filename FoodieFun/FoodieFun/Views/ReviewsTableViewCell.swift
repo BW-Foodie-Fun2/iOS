@@ -30,7 +30,6 @@ class ReviewsTableViewCell: UITableViewCell {
     func updateViews() {
         menuName.text = review?.menuItem
         dateVisitedLabel.text = review?.dateVisited
-        restaurantName.text = restaurant?.name
         if let rating = review?.itemRating {
             ratingLabel.text = "Rating: \(rating)"
         }

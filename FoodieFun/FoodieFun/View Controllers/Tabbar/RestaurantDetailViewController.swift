@@ -44,8 +44,7 @@ class RestaurantDetailViewController: UIViewController, UITextFieldDelegate {
     @objc func saveRestaurant() {
         guard let restaurantName = restaurantNameTextField.text,
             !restaurantName.isEmpty,
-            let restaurantController = restaurantController else {
-                return
+            let restaurantController = restaurantController else { return }
         }
 //        restaurantController.post(restaurant: restaurant)
     }
@@ -60,4 +59,4 @@ class RestaurantDetailViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
-}
+//}
