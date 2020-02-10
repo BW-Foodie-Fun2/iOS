@@ -17,15 +17,15 @@ class RestaurantController {
         fetchRestaurantsFromServer()
     }
     
+    let baseURL = URL(string: "https://foodiefunbw.herokuapp.com")!
+    
     func fetchRestaurantsFromServer(completion: @escaping CompletionHanlder = { _ in }) {
         guard let token = bearer?.token else {
-            print("There is no token for fetching reviews")
+            print("There is no token for fetching restaurant")
             return
         }
         
-        let restaurantURL = baseURL.appendingPathComponent("api")
-            .appendingPathComponent("restaurants")
-        print(restaurantURL)
+        let restaurantURL = baseURL.appendingPathComponent("api").appendingPathComponent("restaurants")
         var request = URLRequest(url: restaurantURL)
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -54,7 +54,7 @@ class RestaurantController {
                 let restaurantRepresentation = try decoder.decode([RestaurantRepresentation].self, from: data)
                 self.updateRestaurant(with: restaurantRepresentation)
             } catch {
-                NSLog("Error occured decoding reviews objects: \(error)")
+                NSLog("Error occured decoding restaurant objects: \(error)")
                 completion(error)
                 return
             }
@@ -96,7 +96,7 @@ class RestaurantController {
                 }
                 CoreDataStack.shared.save(context: context)
             } catch {
-                print("Error fetching reviews from persistence store: \(error)")
+                print("Error fetching restaurant from persistence store: \(error)")
             }
         }
     }
@@ -140,7 +140,7 @@ class RestaurantController {
                            imgURL: String,
                            createdBy: String?,
                            createdAt: String?,
-                           updatedAt: String) -> Restaurant {
+                           updatedAt: String) {
         let restaurant = Restaurant(id: id,
                                     name: name,
                                     cuisineID: cuisineID,
@@ -153,7 +153,6 @@ class RestaurantController {
                                     context: CoreDataStack.shared.mainContext)
         post(restaurant: restaurant)
         saveToPersistenceStore()
-        return restaurant
     }
     
     func post(restaurant: Restaurant, completion: @escaping () -> Void = {}) {
@@ -165,7 +164,7 @@ class RestaurantController {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
         
-        let requestURL = baseURL.appendingPathComponent("reviews")
+        let requestURL = baseURL.appendingPathComponent("api").appendingPathComponent("restaurants")
         var request = URLRequest(url: requestURL)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(token, forHTTPHeaderField: "Authorization")
@@ -187,7 +186,7 @@ class RestaurantController {
         
         URLSession.shared.dataTask(with: request) { (_, _, error) in
             if let error = error {
-                print("Error POSTing reviews: \(error)")
+                print("Error POSTing restaurant: \(error)")
                 completion()
                 return
             }
@@ -198,5 +197,26 @@ class RestaurantController {
     func delete(restaurant: Restaurant) {
         CoreDataStack.shared.mainContext.delete(restaurant)
         CoreDataStack.shared.save()
+    }
+    
+    func deleteRestaurantFromServer(restaurant: Restaurant, completion: @escaping CompletionHanlder = { _ in }) {
+        guard let token = bearer?.token else {
+            completion(nil)
+            return
+        }
+        let requstURL = baseURL.appendingPathComponent("api")
+                                .appendingPathComponent("restaurants")
+                                .appendingPathComponent("\(restaurant.id)")
+        var request = URLRequest(url: requstURL)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        request.httpMethod = HTTPMethod.delete.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            print(response!)
+            DispatchQueue.main.async {
+                completion(error)
+            }
+        }.resume()
     }
 }

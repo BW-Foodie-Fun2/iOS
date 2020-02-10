@@ -22,6 +22,10 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We would like to use your location to find restaurants nearby.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We would like to use your location to find restaurants nearby.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ArchivoNarrow-Regular.otf</string>
@@ -64,9 +68,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We would like to use your location to find restaurants nearby.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We would like to use your location to find restaurants nearby.</string>
 </dict>
 </plist>

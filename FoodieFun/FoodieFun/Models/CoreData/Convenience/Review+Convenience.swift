@@ -11,17 +11,21 @@ import CoreData
 
 extension Review {
     var reviewRepresentation: ReviewRepresentation? {
+        guard let menuItem = menuItem,
+            let itemReview = itemReview,
+            let itemImageURL = itemImageURL,
+            let dateVisited = dateVisited else { return nil }
         return ReviewRepresentation(id: Int(id),
-                                    menuItem: menuItem ?? "",
+                                    menuItem: menuItem,
                                     itemPrice: itemPrice,
                                     itemRating: Int(itemRating),
-                                    itemReview: itemReview ?? "",
+                                    itemReview: itemReview,
                                     restaurantID: Int(restaurantID),
                                     reviewedBy: reviewedBy,
-                                    itemImageURL: itemImageURL ?? "",
+                                    itemImageURL: itemImageURL,
                                     createdAt: createdAt,
                                     updatedAt: updatedAt,
-                                    dateVisited: dateVisited ?? "")
+                                    dateVisited: dateVisited)
     }
     
     convenience init(id: Int?,

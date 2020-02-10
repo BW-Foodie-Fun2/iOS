@@ -8,15 +8,14 @@
 
 import UIKit
 
-class RestaurantDetailViewController: UIViewController, UITextFieldDelegate {
+class RestaurantDetailViewController: ShiftableViewController {
     
     @IBOutlet weak var restaurantNameTextField: UITextField!
     @IBOutlet weak var cuisineNameTextField: UITextField!
-    @IBOutlet weak var dishNameTextField: UITextField!
-    @IBOutlet weak var dishPriceTextField: UITextField!
-    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var ratingTextField: UITextField!
     @IBOutlet weak var reviewTextField: UITextView!
+    @IBOutlet weak var hoursTextView: UITextView!
     
     var restaurant: Restaurant?
     var restaurantController: RestaurantController?
@@ -28,35 +27,51 @@ class RestaurantDetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if restaurant == nil {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveRestaurant))
-        }
     }
     
     private func updateViews() {
         guard isViewLoaded else { return }
-        
-        title = restaurant?.name ?? "Create Restaurant"
         restaurantNameTextField.text = restaurant?.name ?? ""
-        
+        locationTextField.text = restaurant?.location
+        hoursTextView.text = restaurant?.hoursOfOperation
+        restaurant?.createdBy = "iostest"
     }
     
-    @objc func saveRestaurant() {
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        saveRestaurant()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func saveRestaurant() {
         guard let restaurantName = restaurantNameTextField.text,
             !restaurantName.isEmpty,
-            let restaurantController = restaurantController else { return }
+            let location = locationTextField.text,
+            !location.isEmpty,
+            let hours = hoursTextView.text,
+            !hours.isEmpty else { return }
+        if let restaurant = restaurant {
+            restaurantController?.update(restaurant: restaurant,
+                                        id: 0,
+                                        name: restaurantName,
+                                        cuisineID: 0,
+                                        location: location,
+                                        hoursOfOperation: hours,
+                                        imgURL: "",
+                                        createdBy: "",
+                                        createdAt: "",
+                                        updatedAt: "")
+            
+        } else {
+            restaurantController?.createRestaurents(id: 0,
+                                                   name: restaurantName,
+                                                   cuisineID: 0,
+                                                   location: location,
+                                                   hoursOfOperation: hours,
+                                                   imgURL: "",
+                                                   createdBy: "",
+                                                   createdAt: "",
+                                                   updatedAt: "")
+            print("this is adding a restaurant")
         }
-//        restaurantController.post(restaurant: restaurant)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-//}
+}

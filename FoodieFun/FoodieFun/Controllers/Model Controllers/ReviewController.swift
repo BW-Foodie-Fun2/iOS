@@ -9,8 +9,6 @@
 import Foundation
 import CoreData
 
-let baseURL = URL(string: "https://foodiefunbw.herokuapp.com")!
-
 class ReviewController {
     
     typealias CompletionHanlder = (Error?) -> Void
@@ -18,6 +16,8 @@ class ReviewController {
     init() {
         fetchReviewFromServer()
     }
+    
+    let baseURL = URL(string: "https://foodiefunbw.herokuapp.com")!
     
     func fetchReviewFromServer(completion: @escaping CompletionHanlder = { _ in }) {
         guard let token = bearer?.token else {
@@ -49,7 +49,7 @@ class ReviewController {
                 completion(error)
                 return
             }
-            print(String(data: data, encoding: String.Encoding.utf8))
+//            print(String(data: data, encoding: String.Encoding.utf8))
             
             do {
                 let decoder = JSONDecoder()
@@ -148,7 +148,7 @@ class ReviewController {
                        itemImageURL: String,
                        createdAt: String?,
                        updatedAt: String?,
-                       dateVisited: String) -> Review {
+                       dateVisited: String) {
         let review = Review(id: id,
                             menuItem: menuItem,
                             itemPrice: itemPrice,
@@ -163,7 +163,6 @@ class ReviewController {
                             context: CoreDataStack.shared.mainContext)
         post(review: review)
         saveToPersistenceStore()
-        return review
     }
 
     func post(review: Review, completion: @escaping () -> Void = {}) {
@@ -175,7 +174,7 @@ class ReviewController {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
 
-        let requestURL = baseURL.appendingPathComponent("reviews")
+        let requestURL = baseURL.appendingPathComponent("api").appendingPathComponent("reviews")
         var request = URLRequest(url: requestURL)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(token, forHTTPHeaderField: "Authorization")

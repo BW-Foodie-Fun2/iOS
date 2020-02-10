@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A029D4C23F1230D002D6FB6 /* ShiftableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A029D4B23F1230D002D6FB6 /* ShiftableViewController.swift */; };
 		1A2C122C23E7835B0092501E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C122B23E7835B0092501E /* AppDelegate.swift */; };
 		1A2C122E23E7835B0092501E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C122D23E7835B0092501E /* SceneDelegate.swift */; };
 		1A2C123323E7835B0092501E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C123123E7835B0092501E /* Main.storyboard */; };
@@ -23,6 +24,8 @@
 		1A9C372723E7D92100F404A7 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9C372623E7D92100F404A7 /* Tabbar.storyboard */; };
 		1ABF1D8B23EFB59600EB2ACD /* FoodieFun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF1D8923EFB59600EB2ACD /* FoodieFun.xcdatamodeld */; };
 		1AC7B5A423EFD21A00CA2813 /* RestaurantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC7B5A323EFD21A00CA2813 /* RestaurantRepresentation.swift */; };
+		1ACA361023F13B1900D62564 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA360F23F13B1900D62564 /* RestaurantTableViewController.swift */; };
+		1ACA361223F13D9600D62564 /* RestaurantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA361123F13D9600D62564 /* RestaurantsTableViewCell.swift */; };
 		1ACC183A23EA9D9E000CB9D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACC183923EA9D9E000CB9D3 /* LoginViewController.swift */; };
 		1AF3EA3523EDA6C100F686F8 /* ReviewRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3EA3423EDA6C100F686F8 /* ReviewRepresentation.swift */; };
 		1AF3EA3723EDA7F800F686F8 /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3EA3623EDA7F800F686F8 /* ReviewController.swift */; };
@@ -39,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A029D4B23F1230D002D6FB6 /* ShiftableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftableViewController.swift; sourceTree = "<group>"; };
 		1A2C122823E7835B0092501E /* FoodieFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2C122B23E7835B0092501E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2C122D23E7835B0092501E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 		1A9C372623E7D92100F404A7 /* Tabbar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		1ABF1D8A23EFB59600EB2ACD /* FoodieFun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodieFun.xcdatamodel; sourceTree = "<group>"; };
 		1AC7B5A323EFD21A00CA2813 /* RestaurantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRepresentation.swift; sourceTree = "<group>"; };
+		1ACA360F23F13B1900D62564 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		1ACA361123F13D9600D62564 /* RestaurantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewCell.swift; sourceTree = "<group>"; };
 		1ACC183923EA9D9E000CB9D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AF3EA3423EDA6C100F686F8 /* ReviewRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepresentation.swift; sourceTree = "<group>"; };
 		1AF3EA3623EDA7F800F686F8 /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 				1A9C371B23E7BAE300F404A7 /* Fonts */,
 				1A2C124123E783740092501E /* Storyboards */,
 				1AF3EA3D23EDBA3E00F686F8 /* ReviewsTableViewCell.swift */,
+				1ACA361123F13D9600D62564 /* RestaurantsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,10 +180,12 @@
 		1AF1FF5F23EBBE6C0055EAC9 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				1A029D4B23F1230D002D6FB6 /* ShiftableViewController.swift */,
 				1A4CE26923ED73570079727F /* ReviewsTableViewController.swift */,
 				1AF3EA3823EDB70C00F686F8 /* AddExperienceViewController.swift */,
 				1AF3EA3A23EDB7ED00F686F8 /* HomeViewController.swift */,
 				1A4C451223F076B000F4E00D /* RestaurantDetailViewController.swift */,
+				1ACA360F23F13B1900D62564 /* RestaurantTableViewController.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -347,6 +356,9 @@
 				1AF3EA4723EDFBFA00F686F8 /* Restuarant+Convenience.swift in Sources */,
 				1A2C122E23E7835B0092501E /* SceneDelegate.swift in Sources */,
 				1AF3EA3B23EDB7ED00F686F8 /* HomeViewController.swift in Sources */,
+				1A029D4C23F1230D002D6FB6 /* ShiftableViewController.swift in Sources */,
+				1ACA361223F13D9600D62564 /* RestaurantsTableViewCell.swift in Sources */,
+				1ACA361023F13B1900D62564 /* RestaurantTableViewController.swift in Sources */,
 				1AF3EA3523EDA6C100F686F8 /* ReviewRepresentation.swift in Sources */,
 				1ABF1D8B23EFB59600EB2ACD /* FoodieFun.xcdatamodeld in Sources */,
 				1AF5719923E944E100F9EC8F /* User.swift in Sources */,
@@ -504,7 +516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.foodiefunBW4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Foodie Fun Aaron Cleveland AP Provisioning Profile";
@@ -525,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.foodiefunBW4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Foodie Fun Aaron Cleveland AP Provisioning Profile";

@@ -21,12 +21,6 @@ class ReviewsTableViewCell: UITableViewCell {
         }
     }
     
-    var restaurant: Restaurant? {
-        didSet {
-            updateViews()
-        }
-    }
-    
     func updateViews() {
         menuName.text = review?.menuItem
         dateVisitedLabel.text = review?.dateVisited

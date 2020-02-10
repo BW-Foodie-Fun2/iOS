@@ -14,13 +14,13 @@
     <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="String"/>
         <attribute name="dateVisited" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="itemImageURL" attributeType="String"/>
         <attribute name="itemPrice" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="itemRating" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="itemReview" attributeType="String"/>
         <attribute name="menuItem" attributeType="String"/>
-        <attribute name="restaurantID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="restaurantID" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="reviewedBy" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="String"/>
     </entity>

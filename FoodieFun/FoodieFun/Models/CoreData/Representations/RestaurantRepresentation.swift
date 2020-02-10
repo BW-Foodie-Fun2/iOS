@@ -20,7 +20,7 @@ struct RestaurantRepresentation: Codable {
     var updatedAt: String?
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case id
         case name = "name"
         case cuisineID = "cuisine_id"
         case location = "location"

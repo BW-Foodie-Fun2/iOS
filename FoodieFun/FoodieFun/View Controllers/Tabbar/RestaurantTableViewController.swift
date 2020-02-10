@@ -1,25 +1,25 @@
 //
-//  ReviewsTableViewController.swift
+//  RestaurantTableViewController.swift
 //  FoodieFun
 //
-//  Created by Aaron Cleveland on 2/7/20.
+//  Created by Aaron Cleveland on 2/10/20.
 //  Copyright © 2020 Aaron Cleveland. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class ReviewsTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController {
     
-    let reviewController = ReviewController()
+    let restaurantController = RestaurantController()
     
-    lazy var fetchedResultsController: NSFetchedResultsController<Review> = {
-        let fetchRequest: NSFetchRequest<Review> = Review.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "restaurantID", ascending: false)]
+    lazy var fetchedResultsController: NSFetchedResultsController<Restaurant> = {
+        let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "cuisineID", ascending: true)]
         
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
-
+        
         do {
             try frc.performFetch()
         } catch {
@@ -27,10 +27,10 @@ class ReviewsTableViewController: UITableViewController {
         }
         return frc
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,13 +46,11 @@ class ReviewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "theCell", for: indexPath) as? ReviewsTableViewCell else { return UITableViewCell()}
-        
-        let review = fetchedResultsController.object(at: indexPath)
-        cell.review = review
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as? RestaurantsTableViewCell else { return UITableViewCell()}
+        let restaurant = fetchedResultsController.object(at: indexPath)
+        cell.restaurant = restaurant
         return cell
     }
     
@@ -60,43 +58,35 @@ class ReviewsTableViewController: UITableViewController {
         guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
         return sectionInfo.name.capitalized
     }
-
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            let review = fetchedResultsController.object(at: indexPath)
-//            reviewController.deleteReviewFromServer(review: review) { (error) in
-//                if let error = error {
-//                    print("error deleting review from server: \(error)")
-//                    return
-//                }
-//
-//                CoreDataStack.shared.mainContext.delete(review)
-//                do {
-//                    try CoreDataStack.shared.mainContext.save()
-//                } catch {
-//                    CoreDataStack.shared.mainContext.reset()
-//                    NSLog("Error saving managed object context: \(error)")
-//                }
-//            }
-            let review = fetchedResultsController.object(at: indexPath)
-            reviewController.delete(review: review)
+            //            let review = fetchedResultsController.object(at: indexPath)
+            //            reviewController.deleteReviewFromServer(review: review) { (error) in
+            //                if let error = error {
+            //                    print("error deleting review from server: \(error)")
+            //                    return
+            //                }
+            //
+            //                CoreDataStack.shared.mainContext.delete(review)
+            //                do {
+            //                    try CoreDataStack.shared.mainContext.save()
+            //                } catch {
+            //                    CoreDataStack.shared.mainContext.reset()
+            //                    NSLog("Error saving managed object context: \(error)")
+            //                }
+            //            }
+            let restaurant = fetchedResultsController.object(at: indexPath)
+            restaurantController.delete(restaurant: restaurant)
             
-            CoreDataStack.shared.mainContext.delete(review)
-            reviewController.saveToPersistenceStore()
+            CoreDataStack.shared.mainContext.delete(restaurant)
+            restaurantController.saveToPersistenceStore()
         }
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
 }
 
-extension ReviewsTableViewController: NSFetchedResultsControllerDelegate {
+extension RestaurantTableViewController: NSFetchedResultsControllerDelegate {
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
