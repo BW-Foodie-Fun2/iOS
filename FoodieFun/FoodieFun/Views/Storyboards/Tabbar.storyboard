@@ -273,35 +273,93 @@
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYX-I4-dlp">
-                                            <rect key="frame" x="20" y="69" width="41" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-7x-yRX">
-                                            <rect key="frame" x="20" y="11" width="110" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUT-lO-Xlx">
-                                            <rect key="frame" x="20" y="41" width="75" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY8-z5-B85">
-                                            <rect key="frame" x="262" y="40" width="66" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-Wl-Udh">
+                                            <rect key="frame" x="20" y="8" width="343" height="84"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-7x-yRX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
+                                                    <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUT-lO-Xlx">
+                                                    <rect key="frame" x="0.0" y="21" width="343" height="20"/>
+                                                    <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="theCell" id="FxY-tf-lC4" customClass="ReviewsTableViewCell" customModule="FoodieFun" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="42" width="343" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FxY-tf-lC4" id="5bL-u0-mAI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="324" height="0.0"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HIR-q9-H6b">
+                                                                <rect key="frame" x="20" y="20" width="284" height="0.0"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saA-sG-j5P">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="133" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcj-Gr-JGM">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgc-21-ePI">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z5-oL-1WI">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="49.5" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="HIR-q9-H6b" secondAttribute="trailing" constant="20" id="CM0-mC-PCO"/>
+                                                            <constraint firstAttribute="bottom" secondItem="HIR-q9-H6b" secondAttribute="bottom" constant="20" id="fQ0-nV-1aE"/>
+                                                            <constraint firstItem="HIR-q9-H6b" firstAttribute="top" secondItem="5bL-u0-mAI" secondAttribute="top" constant="20" id="gcX-TV-vkf"/>
+                                                            <constraint firstItem="HIR-q9-H6b" firstAttribute="leading" secondItem="5bL-u0-mAI" secondAttribute="leading" constant="20" id="rBd-2Z-F1D"/>
+                                                        </constraints>
+                                                    </tableViewCellContentView>
+                                                    <connections>
+                                                        <outlet property="dateVisitedLabel" destination="zcj-Gr-JGM" id="Sat-Vu-Ej5"/>
+                                                        <outlet property="menuName" destination="Mgc-21-ePI" id="X95-Jz-9lT"/>
+                                                        <outlet property="ratingLabel" destination="2Z5-oL-1WI" id="bc3-eT-TX0"/>
+                                                        <outlet property="restaurantName" destination="saA-sG-j5P" id="sfA-iG-q7G"/>
+                                                    </connections>
+                                                </tableViewCell>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY8-z5-B85">
+                                                    <rect key="frame" x="0.0" y="43" width="343" height="20"/>
+                                                    <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYX-I4-dlp">
+                                                    <rect key="frame" x="0.0" y="64" width="343" height="20"/>
+                                                    <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ga9-Wl-Udh" secondAttribute="bottom" constant="8" id="BOj-Vf-2e7"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ga9-Wl-Udh" secondAttribute="trailing" constant="20" id="DRG-ys-oVl"/>
+                                        <constraint firstItem="Ga9-Wl-Udh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lfV-xC-HpA" secondAttribute="top" constant="8" id="KcE-Or-ifh"/>
+                                        <constraint firstItem="Ga9-Wl-Udh" firstAttribute="leading" secondItem="lfV-xC-HpA" secondAttribute="leading" constant="20" id="q11-fF-6yd"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateVisitedLabel" destination="WUT-lO-Xlx" id="dqf-Fz-ZV9"/>
@@ -321,7 +379,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HT8-Ep-JZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="1233"/>
+            <point key="canvasLocation" x="744.92753623188412" y="1232.8125"/>
         </scene>
         <!--Add Dish-->
         <scene sceneID="fVg-A1-udg">
