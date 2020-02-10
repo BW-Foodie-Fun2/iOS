@@ -52,8 +52,20 @@ class ReviewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let review = fetchedResultsController.object(at: indexPath)
-            CoreDataStack.shared.mainContext.delete(review)
-            reviewController.saveToPersistenceStore()
+            reviewController.deleteReviewFromServer(review: review) { (error) in
+                if let error = error {
+                    print("error deleting review from server: \(error)")
+                    return
+                }
+                
+                CoreDataStack.shared.mainContext.delete(review)
+                do {
+                    try CoreDataStack.shared.mainContext.save()
+                } catch {
+                    CoreDataStack.shared.mainContext.reset()
+                    NSLog("Error saving managed object context: \(error)")
+                }
+            }
         }
     }
     

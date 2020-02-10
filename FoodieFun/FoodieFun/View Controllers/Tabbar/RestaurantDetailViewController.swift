@@ -18,16 +18,36 @@ class RestaurantDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ratingTextField: UITextField!
     @IBOutlet weak var reviewTextField: UITextView!
     
+    var restaurant: Restaurant?
     var restaurantController: RestaurantController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if restaurant == nil {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveRestaurant))
+        }
+    }
+    
+    private func updateViews() {
+        guard isViewLoaded else { return }
         
+        title = restaurant?.name ?? "Create Restaurant"
+        restaurantNameTextField.text = restaurant?.name ?? ""
+        
+    }
+    
+    @objc func saveRestaurant() {
+        guard let restaurantName = restaurantNameTextField.text,
+            !restaurantName.isEmpty,
+            let restaurantController = restaurantController else {
+                return
+        }
+//        restaurantController.post(restaurant: restaurant)
     }
     
     /*

@@ -209,4 +209,19 @@ class ReviewController {
         CoreDataStack.shared.mainContext.delete(review)
         CoreDataStack.shared.save()
     }
+    
+    func deleteReviewFromServer(review: Review, completion: @escaping CompletionHanlder = { _ in }) {
+        let requstURL = baseURL.appendingPathComponent("api")
+                                .appendingPathComponent("delete")
+                                .appendingPathComponent("id")
+        var request = URLRequest(url: requstURL)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            print(response!)
+            DispatchQueue.main.async {
+                completion(error)
+            }
+        }.resume()
+    }
 }
