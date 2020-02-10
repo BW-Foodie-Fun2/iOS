@@ -53,5 +53,16 @@ extension Review {
     @discardableResult convenience init?(reviewRepresentation: ReviewRepresentation,
                                          context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
+        self.id = Int16(reviewRepresentation.id ?? 0)
+        self.menuItem = reviewRepresentation.menuItem
+        self.itemPrice = reviewRepresentation.itemPrice
+        self.itemRating = Int16(reviewRepresentation.itemRating)
+        self.itemReview = reviewRepresentation.itemReview
+        self.restaurantID = Int16(reviewRepresentation.restaurantID)
+        self.reviewedBy = reviewRepresentation.reviewedBy
+        self.itemImageURL = reviewRepresentation.itemImageURL
+        self.createdAt = reviewRepresentation.createdAt
+        self.updatedAt = reviewRepresentation.updatedAt
+        self.dateVisited = reviewRepresentation.dateVisited
     }
 }

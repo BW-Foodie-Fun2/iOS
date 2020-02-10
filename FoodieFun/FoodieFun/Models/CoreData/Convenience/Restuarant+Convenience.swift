@@ -47,5 +47,14 @@ extension Restaurant {
     @discardableResult convenience init?(restaurantRepresentation: RestaurantRepresentation,
                                          context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
+        self.id = Int16(restaurantRepresentation.id ?? 0)
+        self.name = restaurantRepresentation.name
+        self.cuisineID = Int16(restaurantRepresentation.cuisineID)
+        self.location = restaurantRepresentation.location
+        self.hoursOfOperation = restaurantRepresentation.hoursOfOperation
+        self.imgURL = restaurantRepresentation.imgURL
+        self.createdBy = restaurantRepresentation.createdBy
+        self.createdAt = restaurantRepresentation.createdAt
+        self.updatedAt = restaurantRepresentation.updatedAt
     }
 }

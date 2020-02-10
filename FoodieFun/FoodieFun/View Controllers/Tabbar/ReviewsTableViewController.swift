@@ -11,13 +11,12 @@ import CoreData
 
 class ReviewsTableViewController: UITableViewController {
     
-    let auth = Auth()
     let reviewController = ReviewController()
     
     lazy var fetchedResultsController: NSFetchedResultsController<Review> = {
         let fetchRequest: NSFetchRequest<Review> = Review.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "restaurantID", ascending: false)]
-
+        
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
 
@@ -34,8 +33,11 @@ class ReviewsTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController.sections?.count ?? 1
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
 

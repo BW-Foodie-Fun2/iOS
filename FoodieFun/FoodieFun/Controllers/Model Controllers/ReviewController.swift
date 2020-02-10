@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-public let baseURL = URL(string: "https://foodiefunbw.herokuapp.com")!
+let baseURL = URL(string: "https://foodiefunbw.herokuapp.com")!
 
 class ReviewController {
     
@@ -49,6 +49,7 @@ class ReviewController {
                 completion(error)
                 return
             }
+            print(String(data: data, encoding: String.Encoding.utf8))
             
             do {
                 let decoder = JSONDecoder()
@@ -100,7 +101,6 @@ class ReviewController {
             } catch {
                 print("Error fetching reviews from persistence store: \(error)")
             }
-            self.saveToPersistenceStore()
         }
     }
     

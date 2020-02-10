@@ -21,10 +21,16 @@ class ReviewsTableViewCell: UITableViewCell {
         }
     }
     
+    var restaurant: Restaurant? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     func updateViews() {
-        
         menuName.text = review?.menuItem
         dateVisitedLabel.text = review?.dateVisited
+        restaurantName.text = restaurant?.name
         if let rating = review?.itemRating {
             ratingLabel.text = "Rating: \(rating)"
         }
