@@ -16,20 +16,10 @@ public var selectedRestaurantTitle: String = ""
 class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var selectRestaurantButton: UIButton!
-    @IBOutlet weak var mapTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var navigateToRestaurantButton: UIButton!
     @IBOutlet weak var myLocationButton: UIButton!
-    @IBOutlet weak var categoriesSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var foodSearchMapView: MKMapView!
-    @IBOutlet weak var restaurantNameLabel: UILabel!
-    
-    // Custom UI
-    //    var searchBar = UISearchBar()
-    //
-    //    var foodSearchMapView = MKMapView()
-    //
-    //    var restaurantNameLabel = UILabel()
     
     // Searched String
     var searchedTextString: String = ""
@@ -70,9 +60,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
     // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSegmentedControls()
+        myLocButton()
         setupSearchBar()
-        setupLabel()
         setupMap()
     }
     
@@ -93,13 +82,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
         }
     }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "addRestuarantReviewSegue" {
-    //            if let addRestuarantVC = segue.destination as? RestaurantDetailViewController {
-    //                addRestuarantVC.reviewController = reviewController
-    //            }
-    //        }
-    //    }
+    func myLocButton() {
+        self.myLocationButton.layer.cornerRadius = self.myLocationButton.frame.size.width / 2
+    }
     
     // Search in map using given string from searchBar
     func searchInMap() {
@@ -193,7 +178,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
     
     func setupSearchBar() {
         searchBar.delegate = self
-        // searchBarLayoutConstraints()
     }
     
     // Determine Current Location
@@ -255,10 +239,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
             if let restaurantTitle = restaurantTitle {
                 
                 selectedRestaurantTitle = restaurantTitle
-                restaurantNameLabel.text = restaurantTitle
-                selectRestaurantButton.setTitle("Select this restaurant",
-                                                for: .normal)
-                navigateToRestaurantButton.setTitle("Navigate to \(restaurantTitle)",
+                navigateToRestaurantButton.setTitle("Navigate",
                     for: .normal)
                 
             }
@@ -266,24 +247,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
             selectRestaurantButton.isHidden = false
             print("User tapped on annotation with title: \(restaurantTitle!) \(restaurantAddress)")
         }
-    }
-    
-    // Create setup function for labels
-    func setupLabel() {
-        // restaurantNameLabel setup
-        // labelLayoutConstraints()
-        restaurantNameLabel.text = ""
-        restaurantNameLabel.adjustsFontSizeToFitWidth = true
-        restaurantNameLabel.minimumScaleFactor = 0.2
-    }
-    
-    
-    
-    // Create setup for segmented controls
-    func setupSegmentedControls() {
-        mapTypeSegmentedControl.selectedSegmentTintColor = .orange
-        categoriesSegmentedControl.selectedSegmentTintColor = .orange
-        
     }
     
     // Create UIAlertController for messages
@@ -323,17 +286,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
         self.present(alertController,
                      animated: true,
                      completion:nil)
-    }
-    
-    // Segmented control function for map type
-    @IBAction func mapTypeSegmentedControlChanged(_ sender: UISegmentedControl) {
-        
-        if mapTypeSegmentedControl.selectedSegmentIndex == 0  {
-            foodSearchMapView.mapType = .standard
-            
-        } else {
-            foodSearchMapView.mapType = .satellite
-        }
     }
     
     // Navigate button tapped
@@ -381,35 +333,5 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
         foodSearchMapView.setRegion(coordinateRegion,
                                     animated: true)
         
-    }
-    
-    // Function to change categories selected in segmented control
-    @IBAction func categoriesSegmentedControlChanged(_ sender: UISegmentedControl) {
-        
-        if searchBar.text == "" {
-            if categoriesSegmentedControl.selectedSegmentIndex == 0 {
-                categories = [.restaurant]
-            } else if categoriesSegmentedControl.selectedSegmentIndex == 1  {
-                categories = [.brewery, .winery]
-            } else if categoriesSegmentedControl.selectedSegmentIndex == 2 {
-                categories = [.cafe]
-            } else if categoriesSegmentedControl.selectedSegmentIndex == 3 {
-                categories = [.bakery]
-            }
-        } else {
-            if categoriesSegmentedControl.selectedSegmentIndex == 0 {
-                categories = [.restaurant]
-                searchBarSearchButtonClicked(searchBar)
-            } else if categoriesSegmentedControl.selectedSegmentIndex == 1 {
-                categories = [.brewery, .winery]
-                searchBarSearchButtonClicked(searchBar)
-            } else if categoriesSegmentedControl.selectedSegmentIndex == 2 {
-                categories = [.cafe]
-                searchBarSearchButtonClicked(searchBar)
-            } else if categoriesSegmentedControl.selectedSegmentIndex == 3 {
-                categories = [.bakery]
-                searchBarSearchButtonClicked(searchBar)
-            }
-        }
     }
 }

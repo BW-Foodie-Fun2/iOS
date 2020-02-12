@@ -25,7 +25,9 @@ class RestaurantController {
             return
         }
         
-        let restaurantURL = baseURL.appendingPathComponent("api").appendingPathComponent("restaurants")
+        let restaurantURL = baseURL.appendingPathComponent("api")
+                                    .appendingPathComponent("restaurants")
+        
         var request = URLRequest(url: restaurantURL)
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

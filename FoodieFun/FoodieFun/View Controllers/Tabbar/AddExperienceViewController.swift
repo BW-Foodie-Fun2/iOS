@@ -40,7 +40,6 @@ class AddExperienceViewController: ShiftableViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         saveReview()
-        dismiss(animated: true, completion: nil)
     }
     
     func saveReview() {
@@ -80,7 +79,7 @@ class AddExperienceViewController: ShiftableViewController {
                                        createdAt: review?.createdAt,
                                        updatedAt: review?.updatedAt,
                                        dateVisited: dishDate)
-        print("this is adding review")
+        print("ADDING REVIEW TO TABLEVIEW")
         }
     }
 }

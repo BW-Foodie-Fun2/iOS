@@ -15,7 +15,7 @@ class RestaurantTableViewController: UITableViewController {
     
     lazy var fetchedResultsController: NSFetchedResultsController<Restaurant> = {
         let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "cuisineID", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
@@ -30,7 +30,6 @@ class RestaurantTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,39 +43,25 @@ class RestaurantTableViewController: UITableViewController {
         return fetchedResultsController.sections?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as? RestaurantsTableViewCell else { return UITableViewCell()}
+        
         let restaurant = fetchedResultsController.object(at: indexPath)
         cell.restaurant = restaurant
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
-        return sectionInfo.name.capitalized
-    }
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
+//        return sectionInfo.name.capitalized
+//    }
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            //            let review = fetchedResultsController.object(at: indexPath)
-            //            reviewController.deleteReviewFromServer(review: review) { (error) in
-            //                if let error = error {
-            //                    print("error deleting review from server: \(error)")
-            //                    return
-            //                }
-            //
-            //                CoreDataStack.shared.mainContext.delete(review)
-            //                do {
-            //                    try CoreDataStack.shared.mainContext.save()
-            //                } catch {
-            //                    CoreDataStack.shared.mainContext.reset()
-            //                    NSLog("Error saving managed object context: \(error)")
-            //                }
-            //            }
             let restaurant = fetchedResultsController.object(at: indexPath)
             restaurantController.delete(restaurant: restaurant)
             

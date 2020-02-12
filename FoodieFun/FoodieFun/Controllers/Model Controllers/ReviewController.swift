@@ -64,6 +64,11 @@ class ReviewController {
     }
     
     func updateReviews(with representations: [ReviewRepresentation]) {
+        
+        // TODO: - Add API update review section
+        // { HTTP Method: [PUT] URL: /api/reviews/:id }
+        // to update cell with API
+        
         let identifiersToFetch = representations.compactMap( { $0.id } )
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
         var reviewsToCreate = representationsByID

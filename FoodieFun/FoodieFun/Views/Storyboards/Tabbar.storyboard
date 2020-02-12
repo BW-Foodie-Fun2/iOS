@@ -13,6 +13,21 @@
         </array>
     </customFonts>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="KnM-DO-xhH">
+            <objects>
+                <viewController id="fhj-2A-CP7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qgm-OO-4sB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="c2u-Ol-nX5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0nl-UW-RH5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1445" y="1227"/>
+        </scene>
         <!--Home-->
         <scene sceneID="1Ur-GU-PxZ">
             <objects>
@@ -21,116 +36,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7f7-H4-0dh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <subviews>
-                                    <searchBar contentMode="redraw" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L76-xv-Agv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-zh-pZ2">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="564"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="564" id="TQU-hf-ZXl"/>
-                                        </constraints>
-                                    </mapView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Pp-gg-518">
-                                        <rect key="frame" x="0.0" y="620" width="414" height="32"/>
-                                        <segments>
-                                            <segment title="Standard"/>
-                                            <segment title="Satallite"/>
-                                        </segments>
-                                        <color key="selectedSegmentTintColor" name="Ronchi"/>
-                                        <connections>
-                                            <action selector="mapTypeSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="aU2-ip-W3k"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="js6-Rf-DdY">
-                                        <rect key="frame" x="0.0" y="651" width="414" height="51"/>
-                                        <segments>
-                                            <segment title="Restaurant"/>
-                                            <segment title="Bar / Drink"/>
-                                            <segment title="Cafe"/>
-                                            <segment title="Bakery"/>
-                                        </segments>
-                                        <color key="selectedSegmentTintColor" name="Ronchi"/>
-                                        <connections>
-                                            <action selector="categoriesSegmentedControlChanged:" destination="fsG-4r-Pbk" eventType="valueChanged" id="CHZ-26-RGx"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW2-D2-uzv">
-                                        <rect key="frame" x="0.0" y="701" width="414" height="28"/>
-                                        <color key="backgroundColor" name="Cocoa Brown"/>
-                                        <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
-                                        <color key="textColor" name="Ronchi"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eQR-Fk-nRw">
-                                        <rect key="frame" x="0.0" y="729" width="414" height="40"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI2-Ti-rOm">
-                                                <rect key="frame" x="0.0" y="0.0" width="138" height="40"/>
-                                                <color key="backgroundColor" name="Cocoa Brown"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
-                                                <state key="normal" title="Navigate">
-                                                    <color key="titleColor" name="Ronchi"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="navigateToRestaurantButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="Kwz-qc-fJk"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-4I-rac">
-                                                <rect key="frame" x="138" y="0.0" width="138" height="40"/>
-                                                <state key="normal" image="location.fill" catalog="system"/>
-                                                <connections>
-                                                    <action selector="myLocationButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="els-TS-kuo"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivm-A4-lRq">
-                                                <rect key="frame" x="276" y="0.0" width="138" height="40"/>
-                                                <color key="backgroundColor" name="Cocoa Brown"/>
-                                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
-                                                <state key="normal" title="Check In">
-                                                    <color key="titleColor" name="Ronchi"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="15"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="aLR-Os-dZY" kind="presentation" modalPresentationStyle="fullScreen" id="nAJ-r5-vJK"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-zh-pZ2">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="XC3-Rl-bnx"/>
+                                    <constraint firstAttribute="height" constant="713" id="xTQ-Ir-b7c"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI2-Ti-rOm">
+                                <rect key="frame" x="20" y="757" width="115.5" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Tomato"/>
+                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                <state key="normal" title="Navigate">
+                                    <color key="titleColor" name="Seashell"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="navigateToRestaurantButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="Kwz-qc-fJk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-4I-rac">
+                                <rect key="frame" x="182" y="757" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Tomato"/>
+                                <state key="normal" image="location.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="myLocationButtonTapped:" destination="fsG-4r-Pbk" eventType="touchUpInside" id="els-TS-kuo"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L76-xv-Agv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivm-A4-lRq">
+                                <rect key="frame" x="278" y="757" width="115.5" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Tomato"/>
+                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
+                                <state key="normal" title="Check In">
+                                    <color key="titleColor" name="Seashell"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="aLR-Os-dZY" kind="presentation" modalPresentationStyle="fullScreen" id="nAJ-r5-vJK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Cararra"/>
                         <constraints>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="trailing" secondItem="7f7-H4-0dh" secondAttribute="trailing" id="07e-CN-MU5"/>
-                            <constraint firstItem="3j0-4w-KP9" firstAttribute="bottom" secondItem="7f7-H4-0dh" secondAttribute="bottom" id="8bh-p3-1dr"/>
-                            <constraint firstItem="7f7-H4-0dh" firstAttribute="top" secondItem="3j0-4w-KP9" secondAttribute="top" id="Ojl-hi-ac6"/>
-                            <constraint firstItem="7f7-H4-0dh" firstAttribute="leading" secondItem="vnA-HV-Eyx" secondAttribute="leading" id="kRI-hZ-KlP"/>
+                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="trailing" secondItem="3j0-4w-KP9" secondAttribute="trailing" id="60O-14-UGd"/>
+                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="bottom" secondItem="3j0-4w-KP9" secondAttribute="bottom" id="OPj-be-cP3"/>
+                            <constraint firstItem="L76-xv-Agv" firstAttribute="top" secondItem="3j0-4w-KP9" secondAttribute="top" id="cYa-Cv-RpT"/>
+                            <constraint firstItem="L76-xv-Agv" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" id="iit-fY-67F"/>
+                            <constraint firstItem="L76-xv-Agv" firstAttribute="trailing" secondItem="3j0-4w-KP9" secondAttribute="trailing" id="n30-kB-r8F"/>
+                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="leading" secondItem="3j0-4w-KP9" secondAttribute="leading" id="nJp-Ev-owc"/>
+                            <constraint firstItem="fyi-zh-pZ2" firstAttribute="top" secondItem="L76-xv-Agv" secondAttribute="bottom" id="qPR-Mh-3MG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3j0-4w-KP9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="phU-wj-05f"/>
                     <connections>
-                        <outlet property="categoriesSegmentedControl" destination="js6-Rf-DdY" id="DEJ-cW-L7G"/>
                         <outlet property="foodSearchMapView" destination="fyi-zh-pZ2" id="raQ-gA-zOs"/>
-                        <outlet property="mapTypeSegmentedControl" destination="4Pp-gg-518" id="shn-tj-2Hb"/>
                         <outlet property="myLocationButton" destination="woQ-4I-rac" id="kSr-b8-bUR"/>
                         <outlet property="navigateToRestaurantButton" destination="vI2-Ti-rOm" id="xJL-Yv-hFC"/>
-                        <outlet property="restaurantNameLabel" destination="zW2-D2-uzv" id="cH6-Eg-t99"/>
                         <outlet property="searchBar" destination="L76-xv-Agv" id="mmT-6E-fpw"/>
                         <outlet property="selectRestaurantButton" destination="Ivm-A4-lRq" id="lKy-KB-cdS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGP-Bd-zka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-699" y="1233"/>
+            <point key="canvasLocation" x="-700" y="1232.8125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aCs-pc-jld">
@@ -139,8 +123,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XmN-qm-6hH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="Cocoa Brown"/>
-                        <color key="selectedImageTintColor" name="Tuscany"/>
+                        <color key="barTintColor" name="Seashell"/>
+                        <color key="selectedImageTintColor" name="Tomato"/>
                     </tabBar>
                     <connections>
                         <segue destination="fsG-4r-Pbk" kind="relationship" relationship="viewControllers" id="lY9-Yd-dIF"/>
@@ -162,32 +146,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EbZ-XD-4xU">
-                                <rect key="frame" x="132" y="494" width="150" height="34"/>
+                                <rect key="frame" x="244" y="435" width="150" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dish Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-Fq-tO4">
-                                <rect key="frame" x="126" y="219" width="150" height="34"/>
+                                <rect key="frame" x="244" y="393" width="150" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHV-jN-LRr">
-                                <rect key="frame" x="132" y="747" width="150" height="40"/>
+                                <rect key="frame" x="132" y="747" width="150" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cocoa Brown"/>
+                                <color key="backgroundColor" name="Tomato"/>
                                 <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" name="Ronchi"/>
+                                    <color key="titleColor" name="Seashell"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
+                                        <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -195,31 +175,33 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rating: 1 - 5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHI-0t-6Qx">
-                                <rect key="frame" x="126" y="261" width="150" height="34"/>
+                                <rect key="frame" x="244" y="351" width="150" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DIsh Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-OT-OtP">
-                                <rect key="frame" x="126" y="177" width="150" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cararra"/>
-                                <color key="textColor" name="Jaffa"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Review" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-pV-7o8">
-                                <rect key="frame" x="20" y="303" width="374" height="183"/>
+                                <rect key="frame" x="20" y="477" width="374" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Cararra"/>
                                 <color key="textColor" name="Spaghetti"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cuisine" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huE-Ik-UkB">
+                                <rect key="frame" x="244" y="309" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DIsh Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-OT-OtP">
+                                <rect key="frame" x="244" y="267" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" name="Cararra"/>
+                        <color key="backgroundColor" name="Seashell"/>
                         <viewLayoutGuide key="safeArea" id="3aU-Hy-2XH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="A2U-09-3cU"/>
@@ -234,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqR-dS-vk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3677" y="1233"/>
+            <point key="canvasLocation" x="3676.811594202899" y="1232.8125"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="urP-bP-yMD">
@@ -272,25 +254,25 @@
                                                                 <rect key="frame" x="20" y="20" width="284" height="0.0"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saA-sG-j5P">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="133" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcj-Gr-JGM">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgc-21-ePI">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z5-oL-1WI">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="49.5" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -541,21 +523,21 @@
         <namedColor name="Cocoa Brown">
             <color red="0.093999996781349182" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Jaffa">
-            <color red="0.9100000262260437" green="0.58799999952316284" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Ronchi">
             <color red="0.92500001192092896" green="0.72200000286102295" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Seashell">
+            <color red="1" green="0.95686274509803915" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Spaghetti">
             <color red="0.17599999904632568" green="0.33300000429153442" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Tuscany">
-            <color red="0.76899999380111694" green="0.32199999690055847" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Tomato">
+            <color red="0.94117647058823528" green="0.39215686274509803" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CJb-E0-yyg"/>
+        <segue reference="nAJ-r5-vJK"/>
         <segue reference="5nf-nW-Wle"/>
     </inferredMetricsTieBreakers>
 </document>

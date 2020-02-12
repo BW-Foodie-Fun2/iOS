@@ -64,26 +64,12 @@ class ReviewsTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            let review = fetchedResultsController.object(at: indexPath)
-//            reviewController.deleteReviewFromServer(review: review) { (error) in
-//                if let error = error {
-//                    print("error deleting review from server: \(error)")
-//                    return
-//                }
-//
-//                CoreDataStack.shared.mainContext.delete(review)
-//                do {
-//                    try CoreDataStack.shared.mainContext.save()
-//                } catch {
-//                    CoreDataStack.shared.mainContext.reset()
-//                    NSLog("Error saving managed object context: \(error)")
-//                }
-//            }
             let review = fetchedResultsController.object(at: indexPath)
             reviewController.delete(review: review)
             
             CoreDataStack.shared.mainContext.delete(review)
             reviewController.saveToPersistenceStore()
+            print("DELETING FROM TABLEVIEW")
         }
     }
     
